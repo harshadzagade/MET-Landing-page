@@ -1,0 +1,1602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MET - Landing Page</title>
+  <link rel="icon" href="../landingpage/images/metlogo.ico" type="image/png" sizes="16x16">
+  <!-- Optional: Load custom font from Google Fonts -->
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet" >
+  <!-- ✅ Tailwind CSS v3.4.1 via CDN -->
+  <script src="https://cdn.tailwindcss.com/3.4.1"></script>
+
+  <!-- jQuery -->
+  <script src="../landingpage/js/jquery-3.6.0.min.js"></script>
+
+  <!-- Owl Carousel -->
+  <link rel="stylesheet" href="../landingpage/css/owl.carousel.min.css"/>
+  <link rel="stylesheet" href="../landingpage/css/owl.theme.default.min.css"/>
+
+  <script src="../landingpage/js/owl.carousel.min.js"></script>
+
+  <!-- Optional: Inline custom config (limited support) -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            metheader: '#2C2A2A',
+            metred: '#e72025',
+            metredbg: '#FFE9E9',
+            metborder: '#FAC6C8',
+            greybg: '#F7F7F7',
+            greyborder: '#EBEBEB',
+            greytext: '#63636391',
+            testimonialborder: '#63636391',
+          },
+          fontFamily: {
+            futura: ['"FuturaStd"', 'sans-serif'],
+            futurabold: ['"FuturaStd-Bold"', 'sans-serif'],
+            archivo: ['"ArchivoStd"', 'sans-serif'],
+            archivobold: ['"Archivo-Bold"', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+</head>
+
+<style>
+  @font-face {
+    font-family: FuturaStd;
+    src: url("../landingpage/fonts/FuturaStdMedium.otf");
+  }
+
+  @font-face {
+    font-family: FuturaStd-Bold;
+    src: url("../landingpage/fonts/FuturaStdBold.otf");
+  }
+
+  @font-face {
+    font-family: FuturaStd-Light;
+    src: url("../landingpage/fonts/FuturaStdLight.otf");
+  }
+  @font-face {
+      font-family: ArchivoStd;
+      src: url("../landingpage/fonts/archivo/Archivo-Regular.otf");
+  }
+
+  @font-face {
+      font-family: Archivo-Bold;
+      src: url("../landingpage/fonts/archivo/Archivo-SemiBold.otf");
+  }
+
+  @font-face {
+      font-family: Archivo-Light;
+      src: url("../landingpage/fonts/archivo/Archivo-ExtraLight.otf");
+  }
+
+  /* Override owl-carousel CSS for placement slider arrows */
+  .owl-carousel .owl-nav button.owl-next,
+  .owl-carousel .owl-nav button.owl-prev {
+    background-color: #e72025 !important;
+    background: #e72025 !important;
+  }
+
+  /* Make takeaways-slider items equal height */
+  .takeaways-slider .owl-stage {
+    display: flex;
+  }
+  .takeaways-slider .owl-item {
+    display: flex;
+    height: 100%;
+  }
+  .takeaways-slider .item {
+    display: flex;
+    width: 100%;
+  }  
+  /* Make Testimonial-slider items equal height */
+  .testimonial-slider .owl-stage {
+    display: flex;
+  }
+  .testimonial-slider .owl-item {
+    display: flex;
+    height: 100%;
+  }
+  .testimonial-slider .item {
+    display: flex;
+    width: 100%;
+  }
+  .testimonial-slider .item img{
+    width: auto !important;
+  }
+  /* Make Gallery-slider items */
+  .gallery-slider .owl-item {
+    opacity: 0.4;
+    transform: scale(0.85);
+    transition: all 0.4s ease;
+  }
+  .gallery-slider .owl-item.center {
+    opacity: 1;
+    transform: scale(1.05);
+    z-index: 10;
+  }
+  .gallery-slider .owl-stage {
+    display: flex;
+    align-items: center;
+  }
+  .gallery-slider .owl-stage-outer {
+    overflow: hidden;
+  }
+  @media (width <= 48rem) { 
+    .gallery-slider .owl-item.center {
+      transform: scale(1.02);
+    }
+  }
+  /* Make Review-slider items equal height */
+  .review-slider .owl-stage {
+    display: flex;
+  }
+  .review-slider .owl-item {
+    display: flex;
+    height: 100%;
+  }
+  .review-slider .item {
+    display: flex;
+    width: 100%;
+  }
+</style>
+
+<body class="font-archivo text-black">
+
+  <header class="header bg-metheader fixed text-white top-0 left-0 w-full z-50 shadow">
+    <div class="container mx-auto">
+      <div class="max-w-full mx-auto flex items-center justify-between pt-1 pb-1 md:pt-3 md:pb-3 pl-5 pr-5">
+        <div class="flex">
+          <img src="../landingpage/images/met_logo.png" alt="MET Logo" class="w-sm w-[50%] md:w-[80%]">
+        </div>
+        <nav class="hidden xl:flex space-x-8 text-base">
+          <a href="#about">About PGDM</a>
+          <a href="#specialisation">Specialisations</a>
+          <a href="#advantage">Advantage MET</a>
+          <a href="#programme">Programme Details</a>
+          <a href="#placement">Placement</a>
+          <a href="#apply">How To Apply</a>
+          <a href="#testimonial">Testimonials</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+        <div class="flex items-center gap-4">
+          <a href="tel:+917208006694"
+            class="hidden xl:inline-flex items-center bg-metred text-white px-4 py-2 rounded-full text-sm">
+            +91 7208006694
+          </a>
+          <!-- Hamburger Menu Button (Mobile Only) -->
+          <button id="mobile-menu-toggle" class="xl:hidden text-white focus:outline-none p-2">
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+        </div>
+      </div>
+      <!-- Mobile Menu -->
+      <nav id="mobile-menu" class="hidden xl:hidden bg-metheader border-t border-white/20">
+        <div class="flex flex-col space-y-4 py-4 px-4">
+          <a href="#about" class="text-white hover:text-metred transition-colors py-2">About PGDM</a>
+          <a href="#specialisation" class="text-white hover:text-metred transition-colors py-2">Specialisations</a>
+          <a href="#advantage" class="text-white hover:text-metred transition-colors py-2">Advantage MET</a>
+          <a href="#programme" class="text-white hover:text-metred transition-colors py-2">Programme Details</a>
+          <a href="#placement" class="text-white hover:text-metred transition-colors py-2">Placement</a>
+          <a href="#apply" class="text-white hover:text-metred transition-colors py-2">How To Apply</a>
+          <a href="#testimonial" class="text-white hover:text-metred transition-colors py-2">Testimonials</a>
+          <a href="#faq" class="text-white hover:text-metred transition-colors py-2">FAQ</a>
+          <a href="tel:+917208006694"
+            class="inline-flex items-center justify-center bg-metred text-white px-4 py-2 rounded-full text-sm mt-2">
+            <i class="fas fa-phone mr-2"></i>
+            +91 7208006694
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+  
+
+  <section class="banner pt-[57px] md:pt-[72px] relative">
+    <div class="relative w-full z-10">
+      <!-- Banner Image -->
+      <img src="../landingpage/images/banner.png" alt="Banner" class="w-full object-cover hidden md:block relative ">
+      <img src="../landingpage/images/banner_mb_v2.png" alt="Banner" class="w-full object-cover relative md:hidden">
+      <!-- Text Overlay -->
+      <div class="absolute bottom-5 lg:bottom-auto lg:top-1/2 left-[5%] w-[90%] lg:w-[40%] xl:w-[30%] transform md:-translate-y-1/2 text-left">
+        <h1 class="text-3xl lg:text-8xl text-white font-bold">PGDM</h1>
+        <h4 class="sm:text-lg md:text-2xl text-white">Marketing, Finance, HR, System and Operations. Add on specialisation in FinTech | MarTech | Media & Entertainment | Business Analytics | Start-Ups & New Enterprise Management.</h4>
+        <div class="flex flex-col md:flex-row md:items-center gap-5">
+          <a href="#" >
+            <button class="inline-flex items-center justify-center bg-metred text-white px-6 py-2 gap-2 rounded-full text-lg mt-4">
+              Explore More <i class="fa-solid fa-arrow-down mr-2"></i>
+            </button>
+          </a>
+          <a href="#" >
+            <button class="inline-flex items-center justify-center text-white gap-2 rounded-full text-lg md:mt-4 video-trigger cursor-pointer" data-video-id="hXmUIX3GxHw">
+              <i class="fa-solid fa-play border border-white px-3 py-2 rounded-full"></i> Watch Video</i>
+            </button>
+          </a>
+        </div>
+      </div>
+      
+    </div>
+    <!-- Form Overlay -->
+    <div class="lg:absolute bottom-0 overflow-scroll right-[5%] w-[90%] lg:w-[40%] lg:top-1/2 xl:w-[30%] mx-auto transform lg:-translate-y-1/2 text-left border-2 lg:border-0 md-10 md:mt-0 rounded-2xl z-20">
+      <div class="form bg-white p-5 rounded-2xl text-center">
+        <h5 class="text-2xl font-archivobold">Register & Get <span class="text-metred">E-Brochure</span></h5>
+        <form action="#" method="POST" class="space-y-3 pt-4">
+          <!-- Name -->
+          <div>
+            <input type="text" id="name" name="name" placeholder="Your Full Name*" class="w-full p-3 bg-black/10 rounded-lg focus:outline-none focus:ring-2 transition" />
+          </div>
+          <!-- Email -->
+          <div>
+            <input type="email" id="email" name="email" placeholder="Your Email*" class="w-full p-3 bg-black/10 rounded-lg focus:outline-none focus:ring-2 transition" />
+          </div>
+          <!-- Mobile -->
+          <div>
+            <input type="number" id="mobile" name="mobile" placeholder="Your Mobile Number*" class="w-full p-3 bg-black/10 rounded-lg focus:outline-none focus:ring-2 transition" />
+          </div>
+          <!-- City -->
+          <div>
+            <input type="text" id="city" name="city" placeholder="Your City*" class="w-full p-3 bg-black/10 rounded-lg focus:outline-none focus:ring-2 transition" />
+          </div>
+          <!-- Qualification -->
+          <div>
+            <select type="text" name="qualification" placeholder="Enter Your City" class="w-full p-3 bg-black/10 rounded-lg focus:outline-none focus:ring-2 transition" >
+              <option value="" selected hidden>Select Your Qualification*</option>
+              <option value="Graduation">Graduation</option>
+              <option value="Post-Graduation">Post-Graduation</option>
+            </select>
+          </div>
+          <div class="text-left">
+            <input type="checkbox" id="privacy" name="privacy" value="true" checked="">
+            <label for="privacy"> I agree to receive information</label>
+          </div>
+          <div class="bg-metred text-xl text-white font-bold rounded-3xl pt-3 pb-3 pr-6 pl-6">
+            <button>Register Now</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="statistics">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-full mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mt-10 xl:-mt-20 z-20 relative">
+        <div class="bg-metredbg min-h-[140px] p-5 flex items-center justify-center rounded-2xl">
+          <div class="pr-3 pl-3 2xl:pr-5 2xl:pl-5"> 
+            <img src="../landingpage/images/statistics-icon_01.png" alt="MET" class="max-w-none"> 
+          </div>
+          <hr class="mx-2 h-full w-px bg-metborder border-0">
+          <div class="pr-3 pl-3 2xl:pr-5 2xl:pl-5">
+            <h3 class="text-metred text-3xl font-bold">₹20 LPA</h3>
+            <h6>Highest Salary</h6> 
+          </div>
+        </div>
+        <div class="bg-metredbg min-h-[140px] p-5 flex items-center justify-center rounded-2xl">
+          <div class="pr-3 pl-3 2xl:pr-5 2xl:pl-55"> 
+            <img src="../landingpage/images/statistics-icon_02.png" alt="MET" class="max-w-none"> 
+          </div> 
+          <hr class="mx-2 h-full w-px bg-metborder border-0">
+          <div class="pr-3 pl-3 2xl:pr-5 2xl:pl-5">
+            <h3 class="text-metred text-3xl font-bold">4th Best in Mumbai</h3>
+            <h6>By Times B-School Survey 2025</h6> 
+          </div>
+        </div>
+        <div class="bg-metredbg min-h-[140px] p-5 flex items-center justify-center rounded-2xl">
+          <div class="pr-3 pl-3 2xl:pr-5 2xl:pl-5"> 
+            <img src="../landingpage/images/statistics-icon_03.png" alt="MET" class="max-w-none"> 
+          </div>
+          <hr class="mx-2 h-full w-px bg-metborder border-0">
+          <div class="pr-3 pl-3 2xl:pr-5 2xl:pl-5">
+            <h3 class="text-metred text-3xl font-bold">500+</h3>
+            <h6>Recruiting Companies</h6> 
+          </div>
+        </div>
+        <div class="bg-metredbg min-h-[140px] p-5 flex items-center justify-center rounded-2xl">
+          <div class="pr-3 pl-3 2xl:pr-5 2xl:pl-5"> 
+            <img src="../landingpage/images/statistics-icon_04.png" alt="MET" class="max-w-none"> 
+          </div> 
+          <hr class="mx-2 h-full w-px bg-metborder border-0">
+          <div class="pr-3 pl-3 2xl:pr-5 2xl:pl-5">
+            <h3 class="text-metred text-3xl font-bold">MarTech, FinTech, M&E</h3>
+            <h6>Add-On Specialisations</h6> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="amission-open pt-10 pb-10 mt-20">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 bg-[url('../landingpage/images/admission-open_bg.png')] bg-cover bg-center relative rounded-2xl">
+      <div class="max-w-full flex flex-col lg:flex-row items-center gap-10 justify-between lg:p-5">
+        <div class="order-1 lg:order-1 lg:w-[35%] pt-10 lg:pt-0">
+          <button class="bg-white text-3xl text-metred font-extabold p-3 rounded-2xl">APPLICATIONS OPEN</button>
+          <h5 class="text-xl text-white mt-3">CMAT, CAT, XAT, GMAT, ATMA, MAT, MH-CET accepted</h5>
+          <h3 class="text-2xl text-white font-extrabold mt-3">Apply Before: 10th May</h3>
+          <button class="bg-metred text-xl text-white font-bold rounded-3xl pt-2 pb-2 pr-8 pl-8 mt-5">Enquire Now</button>
+        </div>
+        <div class="order-3 lg:order-2 lg:absolute left-1/2 bottom-0 lg:-translate-x-1/2 z-20 text-center">
+          <img src="../landingpage/images/admission-open.png" alt="Admission Open" class="">
+        </div>
+        <div class="order-2 lg:order-3 lg:w-[35%] bg-black/10 rounded-2xl flex item-center p-6">
+          <ul class="list-disc pl-6 space-y-1 text-white text-xl">
+            <li>Highest Salary</li>
+            <li>Profile Based Selection</li>
+            <li>4th Best Mumbai by Times B-School Survey '25</li>
+            <li>NSE Cogencis Finance Lab & Icubation Centre</li>
+            <li>Add-on Specialisations: MarTech, Fintech, M&E</li>
+            <li>500+ Recruiting Companies</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about pb-10" id="about">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-full mx-auto">
+        <h2 class="text-4xl font-archivobold">About <span class="text-metred">Programme</span></h2>
+        <p>MET is ranked as one of the top B-schools in India that offers PGDM or PGDM in Mumbai with specialisations in Marketing, Finance, HR, IT and Operations. PGDM at MET is approved by the All India Council for Technical Education (AICTE) & DTE, Govt. of Maharashtra. It is more than an MBA since its industry-driven course content and pedagogy empowers budding managers with technological tools and knowledge besides honing their managerial prowess. It is evident by the fact that a few thousand MET PGDM alumni are successfully employed at senior levels in leading corporate organisations, making their presence felt and many are successful entrepreneurs too. In addition to the regular specialisations in Finance, Marketing, Human Resources, IT and Operations, MET PGDM offers New Age Add-on specialization in FinTech, MarTech, Media & Entertainment, Business Analytics, Startups & New Enterprise Management.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="specialisation pt-10 pb-10" id="specialisation">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-full mx-auto grid grid-cols-1 xl:grid-cols-2">
+        <div class="xl:border-r xl:border-greyborder xl:pr-6">
+          <h2 class="text-4xl font-archivobold pb-5 text-center md:text-start">Specialisation</h2>
+          <div class="max-w-full mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div class="border border-greyborder p-6 rounded-2xl flex flex-col items-center justify-center text-center min-h-[230px]">
+                <img src="../landingpage/images/specialisation-icon_01.png" alt="Specialisation" class="pb-2">
+                <h5 class="text-lg">PGDM in Finance</h5>
+            </div>
+            <div class="border border-greyborder p-6 rounded-2xl flex flex-col items-center justify-center text-center min-h-[230px]">
+                <img src="../landingpage/images/specialisation-icon_02.png" alt="Specialisation" class="pb-2">
+                <h5 class="text-lg">PGDM in Human Resource</h5>
+            </div>
+            <div class="border border-greyborder p-6 rounded-2xl flex flex-col items-center justify-center text-center min-h-[230px]">
+                <img src="../landingpage/images/specialisation-icon_03.png" alt="Specialisation" class="pb-2">
+                <h5 class="text-lg">PGDM in Marketing</h5>
+            </div>
+            <div class="border border-greyborder p-6 rounded-2xl flex flex-col items-center justify-center text-center min-h-[230px]">
+                <img src="../landingpage/images/specialisation-icon_04.png" alt="Specialisation" class="pb-2">
+                <h5 class="text-lg">PGDM in Operation</h5>
+            </div>
+            <div class="border border-greyborder p-6 rounded-2xl flex flex-col items-center justify-center text-center min-h-[230px]">
+                <img src="../landingpage/images/specialisation-icon_05.png" alt="Specialisation" class="pb-2">
+                <h5 class="text-lg">PGDM in Systems</h5>
+            </div>
+          </div>
+        </div>
+        <div class="pt-6 xl:pt-0 xl:pl-6">
+          <h2 class="text-4xl font-archivobold pb-5 text-center md:text-start">New Age Specialisations</h2>
+          <div class="max-w-full mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div class="border border-greyborder p-6 rounded-2xl flex flex-col items-center justify-center text-center min-h-[230px]">
+                <img src="../landingpage/images/specialisation-icon_06.png" alt="Specialisation" class="pb-2">
+                <h5 class="text-lg">Fintech</h5>
+            </div>
+            <div class="border border-greyborder p-6 rounded-2xl flex flex-col items-center justify-center text-center min-h-[230px]">
+                <img src="../landingpage/images/specialisation-icon_07.png" alt="Specialisation" class="pb-2">
+                <h5 class="text-lg">Martech</h5>
+            </div>
+            <div class="border border-greyborder p-6 rounded-2xl flex flex-col items-center justify-center text-center min-h-[230px]">
+                <img src="../landingpage/images/specialisation-icon_08.png" alt="Specialisation" class="pb-2">
+                <h5 class="text-lg">Media & Entertainment</h5>
+            </div>
+            <div class="border border-greyborder p-6 rounded-2xl flex flex-col items-center justify-center text-center min-h-[230px]">
+                <img src="../landingpage/images/specialisation-icon_09.png" alt="Specialisation" class="pb-2">
+                <h5 class="text-lg">Start-ups and New Enterprise Management</h5>
+            </div>
+            <div class="border border-greyborder p-6 rounded-2xl flex flex-col items-center justify-center text-center min-h-[230px]">
+                <img src="../landingpage/images/specialisation-icon_10.png" alt="Specialisation" class="pb-2">
+                <h5 class="text-lg">Business Analytics</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="advantage bg-[url('../landingpage/images/advantage-met.png')] bg-cover bg-center pt-10 pb-10" id="advantage">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-full mx-auto md:flex items-center justify-between pb-3">
+        <div>
+          <h2 class="text-4xl font-archivobold text-center md:text-start">Advantage <span class="text-metred">MET</span></h2>
+        </div>
+        <div class="hidden md:block">
+          <a>
+            <button class="group bg-metred hover:bg-black text-white px-5 py-2 rounded-3xl transition-colors duration-300">
+              <i class="fas fa-arrow-right mr-1 invisible -translate-x-2 group-hover:visible group-hover:translate-x-0 transition-all ease-in-out"></i>
+              Enquire Now 
+              <i class="fas fa-arrow-right ml-1 group-hover:invisible group-hover:translate-x-2 transition-all ease-in-out"></i>
+            </button>
+          </a>
+        </div>
+      </div>
+      <div class="max-w-full mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 pt-3">
+        <div class="bg-white p-8 min-h-[140px] flex gap-4 items-center rounded-2xl">
+          <div>
+            <img src="../landingpage/images/advantage-icon_01.png" alt="Advantage MET" class="max-w-none">
+          </div>
+          <div>
+            <h6><strong>Ranked 4th Best B-School </strong> in Mumbai by the Times B-School Survey 2025.</h6>
+          </div>
+        </div>
+        <div class="bg-white p-8 min-h-[140px] flex gap-4 items-center rounded-2xl">
+          <div>
+            <img src="../landingpage/images/advantage-icon_02.png" alt="Advantage MET" class="max-w-none">
+          </div>
+          <div>
+            <h6><strong>Ranked 14th among the 'Top 20 West B-Schools' </strong>  by the Times B-School Survey 2025.</h6>
+          </div>
+        </div>
+        <div class="bg-white p-8 min-h-[140px] flex gap-4 items-center rounded-2xl">
+          <div>
+            <img src="../landingpage/images/advantage-icon_03.png" alt="Advantage MET" class="max-w-none">
+          </div>
+          <div>
+            <h6><strong>Ranked 17th Top West B-Schools </strong>by BW Businessworld Ranking 2024.</h6>
+          </div>
+        </div>
+        <div class="bg-white p-8 min-h-[140px] flex gap-4 items-center rounded-2xl">
+          <div>
+            <img src="../landingpage/images/advantage-icon_04.png" alt="Advantage MET" class="max-w-none">
+          </div>
+          <div>
+            <h6><strong>NSE Cogencis Finance Lab</strong></h6>
+          </div>
+        </div>
+        <div class="bg-white p-8 min-h-[140px] flex gap-4 items-center rounded-2xl">
+          <div>
+            <img src="../landingpage/images/advantage-icon_05.png" alt="Advantage MET" class="max-w-none">
+          </div>
+          <div>
+            <h6><strong>MET Incubation Centre </strong> to foster entrepreneurship</h6>
+          </div>
+        </div>
+        <div class="bg-white p-8 min-h-[140px] flex gap-4 items-center rounded-2xl">
+          <div>
+            <img src="../landingpage/images/advantage-icon_06.png" alt="Advantage MET" class="max-w-none">
+          </div>
+          <div>
+            <h6><strong>Excellent placement</strong></h6>
+          </div>
+        </div>
+        <div class="bg-white p-8 min-h-[140px] flex gap-4 items-center rounded-2xl">
+          <div>
+            <img src="../landingpage/images/advantage-icon_07.png" alt="Advantage MET" class="max-w-none">
+          </div>
+          <div>
+            <h6><strong>State-of-the-art infrastructure</strong></h6>
+          </div>
+        </div>
+        <div class="bg-white p-8 min-h-[140px] flex gap-4 items-center rounded-2xl">
+          <div>
+            <img src="../landingpage/images/advantage-icon_08.png" alt="Advantage MET" class="max-w-none">
+          </div>
+          <div>
+            <h6><strong>Strong Alumni Base</strong></h6>
+          </div>
+        </div>
+      </div>
+      <div class="md:hidden mt-5 text-center">
+        <a>
+          <button class="group bg-metred hover:bg-black text-white px-5 py-2 rounded-3xl transition-colors duration-300">
+            <i class="fas fa-arrow-right mr-1 invisible -translate-x-2 group-hover:visible group-hover:translate-x-0 transition-all ease-in-out"></i>
+            Enquire Now 
+            <i class="fas fa-arrow-right ml-1 group-hover:invisible group-hover:translate-x-2 transition-all ease-in-out"></i>
+          </button>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="programme pt-10 pb-10" id="programme">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-full mx-auto pb-3">
+        <div>
+          <h2 class="text-4xl font-archivobold text-center md:text-start">Programme <span class="text-metred">Details</span></h2>
+        </div>
+      </div>
+
+      <div class="max-w-full mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div>
+          <!-- Accordion Item 1 (Open by default) -->
+          <div class="bg-greybg rounded-2xl mb-5">
+            <button class="accordion-btn w-full p-6 flex justify-between items-center" data-accordion-btn>
+              <span class="text-xl">Programme Highlights</span>
+              <svg class="accordion-icon w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor"
+                stroke-width="2" viewBox="0 0 24 24">
+                <path d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+
+            <div class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+              <div class="border-t border-black/10 p-6">
+                <ul class="list-disc pl-6 space-y-1">
+                  <li>Trimester based programme</li>
+                    <li>Learn and Apply pedagogy</li>
+                    <li>Robust and concurrent syllabus</li>
+                    <li>Evaluated Independent Study Courses</li>
+                    <li>New Age Add on Specialisations: FinTech, MarTech</li>
+                    <li>20 LPA highest CTC</li>
+                    <li>Experiential Learning</li>
+                    <li>Latest management techniques</li>
+                    <li>Industry Faculty & Mentors</li>
+                    <li>Rich academic environment & Infra</li>
+                    <li>Nurturing entrepreneurship</li>
+                    <li>Opportunity to publish research papers</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Accordion Item 2 -->
+          <div class="bg-greybg rounded-2xl mb-5">
+            <button class="accordion-btn w-full p-6 flex justify-between items-center" data-accordion-btn>
+              <span class="text-xl">Who Can Apply ?</span>
+              <svg class="accordion-icon w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor"
+                stroke-width="2" viewBox="0 0 24 24">
+                <path d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+
+            <div class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+              <div class="border-t border-black/10 p-6">
+                <ul class="list-disc pl-6 space-y-1">
+                  <li>Trimester based programme</li>
+                    <li>Learn and Apply pedagogy</li>
+                    <li>Robust and concurrent syllabus</li>
+                    <li>Evaluated Independent Study Courses</li>
+                    <li>New Age Add on Specialisations: FinTech, MarTech</li>
+                    <li>20 LPA highest CTC</li>
+                    <li>Experiential Learning</li>
+                    <li>Latest management techniques</li>
+                    <li>Industry Faculty & Mentors</li>
+                    <li>Rich academic environment & Infra</li>
+                    <li>Nurturing entrepreneurship</li>
+                    <li>Opportunity to publish research papers</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Accordion Item 3 -->
+          <div class="bg-greybg rounded-2xl mb-5">
+            <button class="accordion-btn w-full p-6 flex justify-between items-center" data-accordion-btn>
+              <span class="text-xl">Selection Procedure</span>
+              <svg class="accordion-icon w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor"
+                stroke-width="2" viewBox="0 0 24 24">
+                <path d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+
+            <div class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+              <div class="border-t border-black/10 p-6">
+                <ul class="list-disc pl-6 space-y-1">
+                  <li>Trimester based programme</li>
+                    <li>Learn and Apply pedagogy</li>
+                    <li>Robust and concurrent syllabus</li>
+                    <li>Evaluated Independent Study Courses</li>
+                    <li>New Age Add on Specialisations: FinTech, MarTech</li>
+                    <li>20 LPA highest CTC</li>
+                    <li>Experiential Learning</li>
+                    <li>Latest management techniques</li>
+                    <li>Industry Faculty & Mentors</li>
+                    <li>Rich academic environment & Infra</li>
+                    <li>Nurturing entrepreneurship</li>
+                    <li>Opportunity to publish research papers</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <img src="../landingpage/images/programme-details.png" alt="Programme Details" class="rounded-2xl">
+          <div class="absolute bottom-5 left-0 w-full flex justify-center">
+            <a href="#" class="inline-flex items-center justify-center text-white px-6 py-2 gap-2 rounded-full text-lg mt-4 video-trigger cursor-pointer" data-video-id="7b3M-aJI4l8">
+              <i class="fa-solid fa-play border border-white px-3 py-2 rounded-full"></i> Leveraging Technology for Personalized Progress Monitoring</i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="placement bg-[url('../landingpage/images/placement_bg.png')] bg-cover bg-center pt-10 pb-10" id="placement">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-full mx-auto flex items-center justify-center pb-3">
+        <h2 class="text-4xl font-archivobold">Placement</h2>
+      </div>
+      <div class="max-w-full grid grid-cols-1 lg:grid-cols-4 gap-10 items-center">
+        <div class="lg:col-span-1">
+          <div class="bg-[linear-gradient(90deg,_#8F1E22_0%,_#E31E24_77%)] min-h-[140px] p-5 flex items-center justify-center rounded-2xl mb-5 gap-5">
+            <div class=""> 
+              <img src="../landingpage/images/placement-icon_01.png" alt="Placement" class="max-w-none"> 
+            </div>
+            <span class="w-px h-12 bg-white/40"></span>
+            <div class="">
+              <h3 class="text-white text-3xl font-bold">₹20 LPA</h3>
+              <h6 class="text-white">Highest Salary</h6> 
+            </div>
+          </div>
+          <div class="bg-[linear-gradient(90deg,_#8F1E22_0%,_#E31E24_77%)] min-h-[140px] p-5 flex items-center justify-center rounded-2xl mb-5 gap-5">
+            <div class=""> 
+              <img src="../landingpage/images/placement-icon_02.png" alt="Placement" class="max-w-none"> 
+            </div>
+            <span class="w-px h-12 bg-white/40"></span>
+            <div class="">
+              <h3 class="text-white text-3xl font-bold">8.5 LPA</h3>
+              <h6 class="text-white">Average Salary</h6> 
+            </div>
+          </div>
+          <div class="bg-[linear-gradient(90deg,_#8F1E22_0%,_#E31E24_77%)] min-h-[140px] p-5 flex items-center justify-center rounded-2xl mb-5 gap-5">
+            <div class=""> 
+              <img src="../landingpage/images/placement-icon_03.png" alt="Placement" class="max-w-none"> 
+            </div>
+            <span class="w-px h-12 bg-white/40"></span>
+            <div class="">
+              <h3 class="text-white text-3xl font-bold">500+</h3>
+              <h6 class="text-white">Recruiters</h6> 
+            </div>
+          </div>
+        </div>
+        <div class="lg:col-span-3">
+          <div class="owl-carousel placement-slider">
+            <div class="item">
+              <img src="../landingpage/images/placement-logos_01.png" alt="Placement" class="rounded-2xl"> 
+            </div>
+            <div class="item">
+              <img src="../landingpage/images/placement-logos_01.png" alt="Placement" class="rounded-2xl"> 
+            </div>
+            <div class="item">
+              <img src="../landingpage/images/placement-logos_01.png" alt="Placement" class="rounded-2xl"> 
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="max-w-full mx-auto pb-3">
+        <h2 class="text-4xl font-archivobold text-metred text-center md:text-left">Key Takeaways</h2>
+      </div>
+      <div class="max-w-full mx-auto flex items-center justify-start pb-3">
+        <div class="owl-carousel takeaways-slider">
+          <div class="item bg-white rounded-2xl flex flex-col h-full">
+            <img src="../landingpage/images/key-takeaways_01.png" alt="Placement" class="rounded-t-2xl">
+            <div class="p-5 flex-grow flex flex-col">
+              <h4 class="font-archivobold text-metred text-xl mb-2"><strong>Strong theoretical & practical knowledge</strong></h4>
+              <p class="flex-grow">Understanding of various business and management concepts such as finance, marketing, operations, human resources and IT.</p>
+            </div>
+          </div>
+          <div class="item bg-white rounded-2xl flex flex-col h-full">
+            <img src="../landingpage/images/key-takeaways_02.png" alt="Placement" class="rounded-t-2xl">
+            <div class="p-5 flex-grow flex flex-col">
+              <h4 class="font-archivobold text-metred text-xl mb-2"><strong>Latest tools and techniques</strong></h4>
+              <p class="flex-grow">Exposure to the latest tools and techniques used in the business world, such as data analysis, digital marketing, project management, etc.</p>
+            </div>
+          </div>
+          <div class="item bg-white rounded-2xl flex flex-col h-full">
+            <img src="../landingpage/images/key-takeaways_03.png" alt="Placement" class="rounded-t-2xl">
+            <div class="p-5 flex-grow flex flex-col">
+              <h4 class="font-archivobold text-metred text-xl mb-2"><strong>Opportunities</strong></h4>
+              <p class="flex-grow">Opportunities for networking and building professional relationships with peers, alumni, and industry experts.</p>
+            </div>
+          </div>
+          <div class="item bg-white rounded-2xl flex flex-col h-full">
+            <img src="../landingpage/images/key-takeaways_01.png" alt="Placement" class="rounded-t-2xl">
+            <div class="p-5 flex-grow flex flex-col">
+              <h4 class="font-archivobold text-metred text-xl mb-2"><strong>Strong theoretical & practical knowledge</strong></h4>
+              <p class="flex-grow">Understanding of various business and management concepts such as finance, marketing, operations, human resources and IT.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="testimonial pt-10 pb-10" id="testimonial">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-full mx-auto pb-3 text-center md:text-start">
+        <h2 class="text-4xl font-archivobold">Testimonials</h2>
+        <p>What Our Students Say About Us</p>
+      </div>
+      <div class="max-w-full mx-auto flex items-center justify-center p-1">
+        <div class="owl-carousel testimonial-slider">
+          <div class="item p-1">
+             <div class="bg-metredbg text-center p-8 rounded-2xl border border-metred">
+                <img src="../landingpage/images/testimonial_01.png" alt="Testimonial" class="w-auto mx-auto">
+                <h4 class="text-2xl font-archivobold text-metred mt-3">Riti Modi</h4>
+                <h5 class="text-lg font-archivobold text-greytext">PGDM (Marketing)</h5>
+                <p>Ranked 4th Best in Mumbai, MET was my first choice. The faculty members are outstanding and readily available to assist students, while the friendly & accommodating campus atmosphere fosters a positive and flexible learning environment.</p>
+              </div>
+          </div>
+          <div class="item p-1">
+            <div class="bg-metredbg text-center p-8 rounded-2xl border border-metred">
+              <img src="../landingpage/images/testimonial_02.png" alt="Testimonial" class="w-auto mx-auto">
+              <h4 class="text-2xl font-archivobold text-metred mt-3">Amogh Patil</h4>
+              <h5 class="text-lg font-archivobold text-greytext">PGDM (Finance)</h5>
+              <p>Studying PGDM at MET was a remarkable experience. The institute delivers exceptional management education with knowledgeable & approachable faculty members, state of the art campus facilities and a curriculum that expertly blends theory and practical exposure.</p>
+            </div>
+          </div>
+          <div class="item p-1">
+            <div class="bg-metredbg text-center p-8 rounded-2xl border border-metred">
+              <img src="../landingpage/images/testimonial_03.png" alt="Testimonial" class="w-auto mx-auto">
+              <h4 class="text-2xl font-archivobold text-metred mt-3">Rahul Thakur</h4>
+              <h5 class="text-lg font-archivobold text-greytext">PGDM (Operations)</h5>
+              <p>MET has provided an unparalleled experience that cannot be matched by any other college. The internship programs offered here are unique and give students an advantage by providing hands-on exposure to the corporate world. My experience as a student was excellent.</p>
+            </div>
+          </div>
+          <div class="item p-1">
+            <div class="bg-metredbg text-center p-8 rounded-2xl border border-metred">
+              <img src="../landingpage/images/testimonial_01.png" alt="Testimonial" class="w-auto mx-auto">
+              <h4 class="text-2xl font-archivobold text-metred mt-3">Riti Modi</h4>
+              <h5 class="text-lg font-archivobold text-greytext">PGDM (Marketing)</h5>
+              <p>Ranked 4th Best in Mumbai, MET was my first choice. The faculty members are outstanding and readily available to assist students, while the friendly & accommodating campus atmosphere fosters a positive and flexible learning environment.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="apply pt-10 pb-10" id="apply">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-full mx-auto pb-3">
+        <div>
+          <h2 class="text-4xl font-archivobold text-center md:text-left">How to <span class="text-metred">Apply</span></h2>
+        </div>
+      </div>
+      <div class="max-w-full mx-auto grid grid-cols-1 lg:grid-cols-5 gap-10">
+        <div class="lg:col-span-3">
+          <div class="flex gap-4 items-center pt-5 pb-5">
+            <div>
+              <img src="../landingpage/images/apply-step1.png" alt="How to Apply" class="max-w-none">
+            </div>
+            <div>
+              <h4 class="font-archivobold font-black text-xl mb-2"><strong>STEP 1</strong></h4>
+              <p>Click Apply and fill out your personal information, including your name, email, mobile number, and qualifications.</p>
+            </div>
+          </div>
+          <hr class="bg-metborder border-1">
+          <div class="flex gap-4 items-center pt-5 pb-5">
+            <div>
+              <img src="../landingpage/images/apply-step2.png" alt="How to Apply" class="max-w-none">
+            </div>
+            <div>
+              <h4><strong>STEP 2</strong> </h4>
+              <p>Verify the OTP received on your registered email/mobile number and make a non-refundable online payment of Rs. 2300.</p>
+            </div>
+          </div>
+          <hr class="bg-metborder border-1">
+          <div class="flex gap-4 items-center pt-5 pb-5">
+            <div>
+              <img src="../landingpage/images/apply-step3.png" alt="How to Apply" class="max-w-none">
+            </div>
+            <div>
+              <h4><strong>STEP 3</strong> </h4>
+              <p>Login to the MET Online Application Form using the information sent to your email and complete the form, uploading all necessary documents.</p>
+            </div>
+          </div>
+          <hr class="bg-metborder border-1">
+          <div class="flex gap-4 items-center pt-5 pb-5">
+            <div>
+              <img src="../landingpage/images/apply-step4.png" alt="How to Apply" class="max-w-none">
+            </div>
+            <div>
+              <h4><strong>STEP 4</strong> </h4>
+              <p>After the successful submission of the online application, you will be informed of your GD & PI schedule.</p>
+            </div>
+          </div>
+          <hr class="bg-metborder border-1">
+        </div>
+        <div class="lg:col-span-2">
+          <img src="../landingpage/images/how-to-apply.png" alt="How to Apply" class="rounded-2xl"> 
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery pt-10 pb-10">
+    <div class="w-full">
+      <div class="max-w-full mx-auto flex items-center justify-center  pb-3">
+        <h2 class="text-4xl font-archivobold">Gallery</h2>
+      </div>
+      <div class="max-w-full mx-auto flex items-center justify-center p-1">
+        <div class="owl-carousel gallery-slider">
+          <div class="item p-5">
+              <img src="../landingpage/images/gallery.png" alt="Gallery" class="rounded-2xl">
+          </div>
+          <div class="item p-5">
+              <img src="../landingpage/images/gallery.png" alt="Gallery" class="rounded-2xl">
+          </div>
+          <div class="item p-5">
+              <img src="../landingpage/images/gallery.png" alt="Gallery" class="rounded-2xl">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hear-from-met pt-10 pb-10">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-full mx-auto pb-3">
+        <h2 class="text-4xl font-archivobold text-center md:text-start">Hear from <span class="text-metred">MET</span></h2>
+      </div>
+      <div class="max-w-full mx-auto flex items-center justify-center p-1">
+        <div class="owl-carousel review-slider">
+          <div class="item p-1">
+             <div class="max-w-full mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+                <div class="review-col-1">
+                  <div class="text-wrapper border border-greyborder rounded-2xl p-5 mb-5">
+                    <div class="flex items-center justify-start gap-5">
+                      <div>
+                        <img src="../landingpage/images/met-review_01.png" alt="Review">
+                      </div>
+                      <div>
+                        <h5 class="font-extrabold text-xl">Tarun Katial</h5>
+                        <p class="text-metred">Media Manager Media Buyer</p>
+                      </div>
+                    </div>
+                    <div class="mt-3">
+                      <p>"I had the most memorable time studying at MET. The faculty was most helpful and guided me at every step in honing my core competencies. I thank all those who guided me for the wonderful experience. To the students I would like to narrate a few lines from Zen tradition: Those who keep their minds open to new concepts- those whose cups are always empty- will always move to higher levels of achievement and fulfillment."</p>
+                    </div>
+                  </div>
+                  <div class="text-wrapper border border-greyborder rounded-2xl p-5">
+                    <div class="flex items-center justify-start gap-5">
+                      <div>
+                        <img src="../landingpage/images/met-review_02.png" alt="Review">
+                      </div>
+                      <div>
+                        <h5 class="font-extrabold text-xl">Emerson Botosh</h5>
+                        <p class="text-metred">Media Manager Media Buyer</p>
+                      </div>
+                    </div>
+                    <div class="mt-3">
+                      <p>Lorem ipsum dolor sit amet consectetur. Sapien in tincidunt velit dignissim id sit. Amet justo lacus massa elementum quisque egestas id fusce. Volutpat lorem lacus sed leo tincidunt at elit. Tortor risus sed hac leo eget quis odio tincidunt. Mi eu penatibus mauris pretium. Elit est tortor adipiscing maecenas placerat. Augue convallis tristique in amet volutpat eu orci in. Iaculis metus vitae pharetra convallis tristique dictum orci libero. Turpis nunc quis tortor condimentum sed netus nec vel consectetur. Sem ac vel aliquet fringilla mattis et nunc. Amet venenatis ornare elit pellentesque lacus eget. Purus tortor amet adipiscing in at amet.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="review-col-2">
+                  <div class="image-wrapper rounded-2xl mb-5" >
+                    <img src="../landingpage/images/met-review_image_01.png" alt="Review" class="rounded-2xl">
+                    <div class="flex items-center justify-start gap-5 pl-5 pr-5 -mt-16">
+                      <div>
+                        <img src="../landingpage/images/met-review_01.png" alt="Review">
+                      </div>
+                      <div>
+                        <h5 class="font-extrabold text-xl text-white">Livia Rosser</h5>
+                        <p class="text-white">Media Manager Media Buyer</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="text-wrapper border border-greyborder rounded-2xl p-5 mb-5">
+                    <div class="flex items-center justify-start gap-5">
+                      <div>
+                        <img src="../landingpage/images/met-review_01.png" alt="Review">
+                      </div>
+                      <div>
+                        <h5 class="font-extrabold text-xl">Livia Rosser</h5>
+                        <p class="text-metred">Media Manager Media Buyer</p>
+                      </div>
+                    </div>
+                    <div class="mt-3">
+                      <p>"I had the most memorable time studying at MET. The faculty was most helpful and guided me at every step in honing my core competencies. I thank all those who guided me for the wonderful experience. To the students I would like to narrate a few lines from Zen tradition: Those who keep their minds open to new concepts- those whose cups are always empty- will always move to higher levels of achievement and fulfillment."</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="review-col-3">
+                  <div class="text-wrapper border border-greyborder rounded-2xl p-5 mb-5">
+                    <div class="flex items-center justify-start gap-5">
+                      <div>
+                        <img src="../landingpage/images/met-review_01.png" alt="Review">
+                      </div>
+                      <div>
+                        <h5 class="font-extrabold text-xl">Desirae Geidt</h5>
+                        <p class="text-metred">Media Manager Media Buyer</p>
+                      </div>
+                    </div>
+                    <div class="mt-3">
+                      <p>"I had the most memorable time studying at MET. The faculty was most helpful and guided me at every step in honing my core competencies. I thank all those who guided me for the wonderful experience. To the students I would like to narrate a few lines from Zen tradition:</p>
+                    </div>
+                  </div>
+                  <div class="text-wrapper border border-greyborder rounded-2xl p-5 mb-5">
+                    <div class="flex items-center justify-start gap-5">
+                      <div>
+                        <img src="../landingpage/images/met-review_01.png" alt="Review">
+                      </div>
+                      <div>
+                        <h5 class="font-extrabold text-xl">Desirae Geidt</h5>
+                        <p class="text-metred">Media Manager Media Buyer</p>
+                      </div>
+                    </div>
+                    <div class="mt-3">
+                      <p>"I had the most memorable time studying at MET. The faculty was most helpful and guided me at every step in honing my core competencies. I thank all those who guided me for the wonderful experience. To the students I would like to narrate a few lines from Zen tradition:</p>
+                    </div>
+                  </div>
+                  <div class="text-wrapper border border-greyborder rounded-2xl p-5 mb-5">
+                    <div class="flex items-center justify-start gap-5">
+                      <div>
+                        <img src="../landingpage/images/met-review_01.png" alt="Review">
+                      </div>
+                      <div>
+                        <h5 class="font-extrabold text-xl">Desirae Geidt</h5>
+                        <p class="text-metred">Media Manager Media Buyer</p>
+                      </div>
+                    </div>
+                    <div class="mt-3">
+                      <p>"I had the most memorable time studying at MET. The faculty was most helpful and guided me at every step in honing my core competencies. I thank all those who guided me for the wonderful experience. To the students I would like to narrate a few lines from Zen tradition:</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="review-col-4">
+                  <div class="text-wrapper border border-greyborder rounded-2xl p-5 mb-5">
+                    <div class="flex items-center justify-start gap-5">
+                      <div>
+                        <img src="../landingpage/images/met-review_01.png" alt="Review">
+                      </div>
+                      <div>
+                        <h5 class="font-extrabold text-xl">Livia Rosser</h5>
+                        <p class="text-metred">Media Manager Media Buyer</p>
+                      </div>
+                    </div>
+                    <div class="mt-3">
+                      <p>"I had the most memorable time studying at MET. The faculty was most helpful and guided me at every step in honing my core competencies. I thank all those who guided me for the wonderful experience. To the students I would like to narrate a few lines from Zen tradition: Those who keep their minds open to new concepts- those whose cups are always empty- will always move to higher levels of achievement and fulfillment."</p>
+                    </div>
+                  </div>
+                  <div class="image-wrapper rounded-2xl mb-5" >
+                    <img src="../landingpage/images/met-review_image_02.png" alt="Review" class="rounded-2xl">
+                    <div class="flex items-center justify-start gap-5 pl-5 pr-5 -mt-16">
+                      <div>
+                        <img src="../landingpage/images/met-review_01.png" alt="Review">
+                      </div>
+                      <div>
+                        <h5 class="font-extrabold text-xl text-white">Livia Rosser</h5>
+                        <p class="text-white">Media Manager Media Buyer</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+             </div>
+          </div>
+          <div class="item p-1">
+            <div class="max-w-full mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+               <div class="review-col-1">
+                 <div class="text-wrapper border border-greyborder rounded-2xl p-5 mb-5">
+                   <div class="flex items-center justify-start gap-5">
+                     <div>
+                       <img src="../landingpage/images/met-review_01.png" alt="Review">
+                     </div>
+                     <div>
+                       <h5 class="font-extrabold text-xl">Tarun Katial</h5>
+                       <p class="text-metred">Media Manager Media Buyer</p>
+                     </div>
+                   </div>
+                   <div class="mt-3">
+                     <p>"I had the most memorable time studying at MET. The faculty was most helpful and guided me at every step in honing my core competencies. I thank all those who guided me for the wonderful experience. To the students I would like to narrate a few lines from Zen tradition: Those who keep their minds open to new concepts- those whose cups are always empty- will always move to higher levels of achievement and fulfillment."</p>
+                   </div>
+                 </div>
+                 <div class="text-wrapper border border-greyborder rounded-2xl p-5">
+                   <div class="flex items-center justify-start gap-5">
+                     <div>
+                       <img src="../landingpage/images/met-review_02.png" alt="Review">
+                     </div>
+                     <div>
+                       <h5 class="font-extrabold text-xl">Emerson Botosh</h5>
+                       <p class="text-metred">Media Manager Media Buyer</p>
+                     </div>
+                   </div>
+                   <div class="mt-3">
+                     <p>Lorem ipsum dolor sit amet consectetur. Sapien in tincidunt velit dignissim id sit. Amet justo lacus massa elementum quisque egestas id fusce. Volutpat lorem lacus sed leo tincidunt at elit. Tortor risus sed hac leo eget quis odio tincidunt. Mi eu penatibus mauris pretium. Elit est tortor adipiscing maecenas placerat. Augue convallis tristique in amet volutpat eu orci in. Iaculis metus vitae pharetra convallis tristique dictum orci libero. Turpis nunc quis tortor condimentum sed netus nec vel consectetur. Sem ac vel aliquet fringilla mattis et nunc. Amet venenatis ornare elit pellentesque lacus eget. Purus tortor amet adipiscing in at amet.</p>
+                   </div>
+                 </div>
+               </div>
+               <div class="review-col-2">
+                 <div class="image-wrapper rounded-2xl mb-5" >
+                   <img src="../landingpage/images/met-review_image_01.png" alt="Review" class="rounded-2xl">
+                   <div class="flex items-center justify-start gap-5 pl-5 pr-5 -mt-16">
+                     <div>
+                       <img src="../landingpage/images/met-review_01.png" alt="Review">
+                     </div>
+                     <div>
+                       <h5 class="font-extrabold text-xl text-white">Livia Rosser</h5>
+                       <p class="text-white">Media Manager Media Buyer</p>
+                     </div>
+                   </div>
+                 </div>
+                 <div class="text-wrapper border border-greyborder rounded-2xl p-5 mb-5">
+                   <div class="flex items-center justify-start gap-5">
+                     <div>
+                       <img src="../landingpage/images/met-review_01.png" alt="Review">
+                     </div>
+                     <div>
+                       <h5 class="font-extrabold text-xl">Livia Rosser</h5>
+                       <p class="text-metred">Media Manager Media Buyer</p>
+                     </div>
+                   </div>
+                   <div class="mt-3">
+                     <p>"I had the most memorable time studying at MET. The faculty was most helpful and guided me at every step in honing my core competencies. I thank all those who guided me for the wonderful experience. To the students I would like to narrate a few lines from Zen tradition: Those who keep their minds open to new concepts- those whose cups are always empty- will always move to higher levels of achievement and fulfillment."</p>
+                   </div>
+                 </div>
+               </div>
+               <div class="review-col-3">
+                 <div class="text-wrapper border border-greyborder rounded-2xl p-5 mb-5">
+                   <div class="flex items-center justify-start gap-5">
+                     <div>
+                       <img src="../landingpage/images/met-review_01.png" alt="Review">
+                     </div>
+                     <div>
+                       <h5 class="font-extrabold text-xl">Desirae Geidt</h5>
+                       <p class="text-metred">Media Manager Media Buyer</p>
+                     </div>
+                   </div>
+                   <div class="mt-3">
+                     <p>"I had the most memorable time studying at MET. The faculty was most helpful and guided me at every step in honing my core competencies. I thank all those who guided me for the wonderful experience. To the students I would like to narrate a few lines from Zen tradition:</p>
+                   </div>
+                 </div>
+                 <div class="text-wrapper border border-greyborder rounded-2xl p-5 mb-5">
+                   <div class="flex items-center justify-start gap-5">
+                     <div>
+                       <img src="../landingpage/images/met-review_01.png" alt="Review">
+                     </div>
+                     <div>
+                       <h5 class="font-extrabold text-xl">Desirae Geidt</h5>
+                       <p class="text-metred">Media Manager Media Buyer</p>
+                     </div>
+                   </div>
+                   <div class="mt-3">
+                     <p>"I had the most memorable time studying at MET. The faculty was most helpful and guided me at every step in honing my core competencies. I thank all those who guided me for the wonderful experience. To the students I would like to narrate a few lines from Zen tradition:</p>
+                   </div>
+                 </div>
+                 <div class="text-wrapper border border-greyborder rounded-2xl p-5 mb-5">
+                   <div class="flex items-center justify-start gap-5">
+                     <div>
+                       <img src="../landingpage/images/met-review_01.png" alt="Review">
+                     </div>
+                     <div>
+                       <h5 class="font-extrabold text-xl">Desirae Geidt</h5>
+                       <p class="text-metred">Media Manager Media Buyer</p>
+                     </div>
+                   </div>
+                   <div class="mt-3">
+                     <p>"I had the most memorable time studying at MET. The faculty was most helpful and guided me at every step in honing my core competencies. I thank all those who guided me for the wonderful experience. To the students I would like to narrate a few lines from Zen tradition:</p>
+                   </div>
+                 </div>
+               </div>
+               <div class="review-col-4">
+                 <div class="text-wrapper border border-greyborder rounded-2xl p-5 mb-5">
+                   <div class="flex items-center justify-start gap-5">
+                     <div>
+                       <img src="../landingpage/images/met-review_01.png" alt="Review">
+                     </div>
+                     <div>
+                       <h5 class="font-extrabold text-xl">Livia Rosser</h5>
+                       <p class="text-metred">Media Manager Media Buyer</p>
+                     </div>
+                   </div>
+                   <div class="mt-3">
+                     <p>"I had the most memorable time studying at MET. The faculty was most helpful and guided me at every step in honing my core competencies. I thank all those who guided me for the wonderful experience. To the students I would like to narrate a few lines from Zen tradition: Those who keep their minds open to new concepts- those whose cups are always empty- will always move to higher levels of achievement and fulfillment."</p>
+                   </div>
+                 </div>
+                 <div class="image-wrapper rounded-2xl mb-5" >
+                   <img src="../landingpage/images/met-review_image_02.png" alt="Review" class="rounded-2xl">
+                   <div class="flex items-center justify-start gap-5 pl-5 pr-5 -mt-16">
+                     <div>
+                       <img src="../landingpage/images/met-review_01.png" alt="Review">
+                     </div>
+                     <div>
+                       <h5 class="font-extrabold text-xl text-white">Livia Rosser</h5>
+                       <p class="text-white">Media Manager Media Buyer</p>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+            </div>
+         </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact pt-10 pb-[250px] bg-greybg">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-full mx-auto text-center mb-5">
+        <h2 class="text-metred text-4xl pb-3 font-archivobold">Visit Our Campus</h2>
+        <p class="text-xl">MET Institute of Post Graduate Diploma in Management</p>
+      </div>
+      <div class="max-w-full mx-auto grid grid-cols-1 lg:grid-cols-3 gap-10 mb-5">
+        <div class="bg-white p-6 rounded-2xl flex items-center">
+          <div class="flex gap-5 items-center">
+            <img src="../landingpage/images/visit-address.png" alt="Visit Address">
+            <div>
+              <h5 class="font-bold text-xl">Campus Address</h5>
+              <p>Bhujbal Knowledge City, Reclamation, Bandra West, Mumbai, Maharashtra 400050</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl flex items-center">
+          <div class="flex gap-5 items-center">
+            <img src="../landingpage/images/visit-contact.png" alt="Contact Us">
+            <div>
+              <h5 class="font-bold text-xl">Contact Us</h5>
+              <p>7208006694, 7208006695, 8451907258, 9967181380</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl flex items-center">
+          <div class="flex gap-5 items-center">
+            <img src="../landingpage/images/visit-mail.png" alt="Email Us">
+            <div>
+              <h5 class="font-bold text-xl">Email Us</h5>
+              <p>communications@met.edu</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    
+  <section class="map mt-[-220px]">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-full mx-auto">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.2701586001667!2d72.8266165757653!3d19.05185598214778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9d95195a12f%3A0x7b2c91d24e169a83!2sMET%20Institute%20of%20Management!5e0!3m2!1sen!2sin!4v1752495536336!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-2xl"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq pt-10 pb-10" id="faq">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-full mx-auto flex items-center justify-center mb-5">
+        <h2 class="text-metred text-4xl font-archivobold">Frequently Asked Questions</h2>
+      </div>
+      <div class="max-w-full mx-auto md:columns-2 gap-8">
+        <div class="" id="faq-accordion">
+          <!-- Accordion Item 1 (Open by default) -->
+          <div class="bg-greybg rounded-2xl mb-5">
+            <button onclick="openAccordion('section1')"
+              class="accordion-btn w-full text-left p-6 flex justify-between items-center bg-metredbg text-metred rounded-t-2xl">
+              <span class="text-xl">Why opt for the PGDM Programme at MET?</span>
+              <svg id="icon-section1" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" stroke-width="2"
+                viewBox="0 0 24 24">
+                <path d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div id="section1" class="accordion-content max-h-auto overflow-hidden transition-all duration-300 pl-6 pr-6 bg-metredbg rounded-b-2xl">
+              <div class="w-full border-t border-metred pt-6 pb-6">
+                <p class="">The MET PGDM programme offers a competitive edge with its trimester-based structure, robust syllabus, and opportunities to publish research papers. Its flexible course design includes industry-relevant modules like Business Analytics and E-Commerce, fostering practical skills and bridging the education-employment gap. With a focus on entrepreneurship, industry expertise, and innovation, MET prepares future-ready managers for successful careers.</p>
+              </div>    
+            </div>
+          </div>
+
+          <!-- Accordion Item 2 -->
+          <div class="bg-greybg rounded-2xl mb-5">
+            <button onclick="openAccordion('section2')"
+              class="accordion-btn w-full text-left p-6 flex justify-between items-center">
+              <span class="text-xl">What is the teaching instruction MET PGDM follows?</span>
+              <svg id="icon-section2" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" stroke-width="2"
+                viewBox="0 0 24 24">
+                <path d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div id="section2" class="accordion-content max-h-0 overflow-hidden transition-all duration-300 pl-6 pr-6">
+              <div class="w-full border-t border-metred pt-6 pb-6">
+                <p class="">The MET PGDM programme offers a competitive edge with its trimester-based structure, robust syllabus, and opportunities to publish research papers. Its flexible course design includes industry-relevant modules like Business Analytics and E-Commerce, fostering practical skills and bridging the education-employment gap. With a focus on entrepreneurship, industry expertise, and innovation, MET prepares future-ready managers for successful careers.</p>
+              </div>  
+            </div>
+          </div>
+
+          <!-- Accordion Item 3 -->
+          <div class="bg-greybg rounded-2xl mb-5">
+            <button onclick="openAccordion('section3')"
+              class="accordion-btn w-full text-left p-6 flex justify-between items-center">
+              <span class="text-xl">What is so unique about MET PGDM specializations?</span>
+              <svg id="icon-section3" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" stroke-width="2"
+                viewBox="0 0 24 24">
+                <path d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div id="section3" class="accordion-content max-h-0 overflow-hidden transition-all duration-300 pl-6 pr-6">
+              <div class="w-full border-t border-metred pt-6 pb-6">
+                <p class="">The MET PGDM programme offers a competitive edge with its trimester-based structure, robust syllabus, and opportunities to publish research papers. Its flexible course design includes industry-relevant modules like Business Analytics and E-Commerce, fostering practical skills and bridging the education-employment gap. With a focus on entrepreneurship, industry expertise, and innovation, MET prepares future-ready managers for successful careers.</p>
+              </div>  
+            </div>
+          </div>
+
+          <!-- Accordion Item 4-->
+          <div class="bg-greybg rounded-2xl mb-5">
+            <button onclick="openAccordion('section4')"
+              class="accordion-btn w-full text-left p-6 flex justify-between items-center">
+              <span class="text-xl">Why opt for the PGDM Programme at MET?</span>
+              <svg id="icon-section4" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" stroke-width="2"
+                viewBox="0 0 24 24">
+                <path d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div id="section4" class="accordion-content max-h-0 overflow-hidden transition-all duration-300 pl-6 pr-6 bg-metredbg rounded-b-2xl">
+              <div class="w-full border-t border-metred pt-6 pb-6">
+                <p class="">The MET PGDM programme offers a competitive edge with its trimester-based structure, robust syllabus, and opportunities to publish research papers. Its flexible course design includes industry-relevant modules like Business Analytics and E-Commerce, fostering practical skills and bridging the education-employment gap. With a focus on entrepreneurship, industry expertise, and innovation, MET prepares future-ready managers for successful careers.</p>
+              </div>    
+            </div>
+          </div>
+
+          <!-- Accordion Item 5 -->
+          <div class="bg-greybg rounded-2xl mb-5">
+            <button onclick="openAccordion('section5')"
+              class="accordion-btn w-full text-left p-6 flex justify-between items-center">
+              <span class="text-xl">What is the teaching instruction MET PGDM follows?</span>
+              <svg id="icon-section5" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" stroke-width="2"
+                viewBox="0 0 24 24">
+                <path d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div id="section5" class="accordion-content max-h-0 overflow-hidden transition-all duration-300 pl-6 pr-6">
+              <div class="w-full border-t border-metred pt-6 pb-6">
+                <p class="">The MET PGDM programme offers a competitive edge with its trimester-based structure, robust syllabus, and opportunities to publish research papers. Its flexible course design includes industry-relevant modules like Business Analytics and E-Commerce, fostering practical skills and bridging the education-employment gap. With a focus on entrepreneurship, industry expertise, and innovation, MET prepares future-ready managers for successful careers.</p>
+              </div>  
+            </div>
+          </div>
+
+          <!-- Accordion Item 6 -->
+          <div class="bg-greybg rounded-2xl mb-5">
+            <button onclick="openAccordion('section6')"
+              class="accordion-btn w-full text-left p-6 flex justify-between items-center">
+              <span class="text-xl">What is so unique about MET PGDM specializations?</span>
+              <svg id="icon-section6" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" stroke-width="2"
+                viewBox="0 0 24 24">
+                <path d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div id="section6" class="accordion-content max-h-0 overflow-hidden transition-all duration-300 pl-6 pr-6">
+              <div class="w-full border-t border-metred pt-6 pb-6">
+                <p class="">The MET PGDM programme offers a competitive edge with its trimester-based structure, robust syllabus, and opportunities to publish research papers. Its flexible course design includes industry-relevant modules like Business Analytics and E-Commerce, fostering practical skills and bridging the education-employment gap. With a focus on entrepreneurship, industry expertise, and innovation, MET prepares future-ready managers for successful careers.</p>
+              </div>  
+            </div>
+          </div>
+
+          <!-- Accordion Item 7 -->
+          <div class="bg-greybg rounded-2xl mb-5">
+            <button onclick="openAccordion('section7')"
+              class="accordion-btn w-full text-left p-6 flex justify-between items-center">
+              <span class="text-xl">What is so unique about MET PGDM specializations?</span>
+              <svg id="icon-section7" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" stroke-width="2"
+                viewBox="0 0 24 24">
+                <path d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div id="section7" class="accordion-content max-h-0 overflow-hidden transition-all duration-300 pl-6 pr-6">
+              <div class="w-full border-t border-metred pt-6 pb-6">
+                <p class="">The MET PGDM programme offers a competitive edge with its trimester-based structure, robust syllabus, and opportunities to publish research papers. Its flexible course design includes industry-relevant modules like Business Analytics and E-Commerce, fostering practical skills and bridging the education-employment gap. With a focus on entrepreneurship, industry expertise, and innovation, MET prepares future-ready managers for successful careers.</p>
+              </div>  
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer bg-metheader text-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-full mx-auto flex items-center justify-center pt-2 pb-2">
+        <p>Copyright © 2025 MET. All rights reserved</p>
+      </div>
+    </div>
+  </footer>
+
+  <div id="videoModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70">
+    <div class="relative w-full max-w-4xl mx-4 bg-black rounded-xl overflow-hidden">
+      <button id="closeVideo" class="absolute top-3 right-3 z-10 text-white text-2xl">✕</button>
+      <div class="relative w-full aspect-video">
+        <iframe id="youtubeFrame" class="absolute inset-0 w-full h-full" src="" title="YouTube video" frameborder="0"
+          allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+    <!-- Video Popup -->
+    <script>
+      const modal = document.getElementById('videoModal');
+      const iframe = document.getElementById('youtubeFrame');
+      const closeBtn = document.getElementById('closeVideo');
+    
+      document.querySelectorAll('.video-trigger').forEach(el => {
+        el.addEventListener('click', () => {
+          const videoId = el.dataset.videoId;
+    
+          iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+    
+          modal.classList.remove('hidden');
+          modal.classList.add('flex');
+        });
+      });
+    
+      function closeModal() {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        iframe.src = ''; // stops the video
+      }
+    
+      closeBtn.addEventListener('click', closeModal);
+    
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+      });
+    
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeModal();
+      });
+    </script>
+
+  <!-- Mobile Menu Toggle -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const hamburgerIcon = mobileMenuToggle.querySelector('i');
+
+      mobileMenuToggle.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+        
+        // Toggle between hamburger and close icon
+        if (mobileMenu.classList.contains('hidden')) {
+          hamburgerIcon.classList.remove('fa-times');
+          hamburgerIcon.classList.add('fa-bars');
+        } else {
+          hamburgerIcon.classList.remove('fa-bars');
+          hamburgerIcon.classList.add('fa-times');
+        }
+      });
+
+      // Close mobile menu when clicking on a link
+      const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+      mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          mobileMenu.classList.add('hidden');
+          hamburgerIcon.classList.remove('fa-times');
+          hamburgerIcon.classList.add('fa-bars');
+        });
+      });
+    });
+  </script>
+  <!-- FAQ Accordian -->
+  <script>
+    function openAccordion(activeId) {
+      const allContents = document.querySelectorAll('.accordion-content');
+      const allIcons = document.querySelectorAll('.accordion-btn svg');
+      const allButtons = document.querySelectorAll('.accordion-btn');
+
+      allContents.forEach(content => {
+        if (content.id === activeId) {
+          content.classList.remove('max-h-0', 'bg-greybg');
+          content.classList.add('max-h-auto', 'bg-metredbg', 'rounded-b-2xl');
+        } else {
+          content.classList.remove('max-h-auto', 'bg-metredbg', 'rounded-b-2xl');
+          content.classList.add('max-h-0', 'bg-greybg');
+        }
+      });
+
+      allIcons.forEach(icon => {
+        if (icon.id === 'icon-' + activeId) {
+          icon.classList.add('rotate-180');
+        } else {
+          icon.classList.remove('rotate-180');
+        }
+      });
+
+      allButtons.forEach(btn => {
+        const svg = btn.querySelector('svg');
+        const iconId = svg?.id || ''; 
+        if (iconId === 'icon-' + activeId) {
+          btn.classList.add('bg-metredbg', 'text-metred', 'rounded-t-2xl');
+          btn.classList.remove('bg-greybg', 'text-black', 'rounded-2xl');
+          // btn.insertAdjacentHTML('beforeend', '<div class="w-[95%] border-b border-metred mt-3"></div>');
+        } else {
+          btn.classList.add('bg-greybg', 'text-black', 'rounded-2xl');
+          btn.classList.remove('bg-metredbg', 'text-metred', 'rounded-t-2xl');
+        }
+      });
+    }
+  </script>
+  <!-- Programme Accordian -->
+  <script>
+    const accordionButtons = document.querySelectorAll('[data-accordion-btn]');
+
+    accordionButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const content = button.nextElementSibling;
+        const icon = button.querySelector('.accordion-icon');
+        const text = button.querySelector('span');
+        const isOpen = content.style.maxHeight;
+
+        // Close all accordions in same group
+        button.closest('div').parentElement
+          .querySelectorAll('.accordion-content')
+          .forEach(el => {
+            el.style.maxHeight = null;
+
+          const btn = el.previousElementSibling;
+          btn.querySelector('.accordion-icon')?.classList.remove('rotate-180');
+          btn.querySelector('span')?.classList.remove('font-bold');
+        });
+
+        if (!isOpen) {
+          content.style.maxHeight = content.scrollHeight + 'px';
+          icon.classList.add('rotate-180');
+          text.classList.add('font-bold');
+        }
+      });
+    });
+
+    /* ✅ OPEN FIRST ACCORDION ON LOAD */
+    if (accordionButtons.length) {
+      const firstBtn = accordionButtons[0];
+      const firstContent = firstBtn.nextElementSibling;
+      const firstIcon = firstBtn.querySelector('.accordion-icon');
+      const firstText = firstBtn.querySelector('span');
+
+      firstContent.style.maxHeight = firstContent.scrollHeight + 'px';
+      firstIcon.classList.add('rotate-180');
+      firstText.classList.add('font-bold');
+    }
+  </script>
+  <!-- Owl Carousel -->
+  <script>
+  $(document).ready(function(){
+
+    $('.placement-slider').owlCarousel({
+      items: 1,
+      margin: 0,
+      loop: true,
+      autoplay: true,
+      autoplayTimeout: 4000,
+      nav: true,
+      dots: true
+    });
+
+    $('.takeaways-slider').owlCarousel({
+      items: 3,
+      margin: 30,
+      loop: true,
+      autoplay: true,
+      autoplayTimeout: 4000,
+      nav: true,
+      dots: true,
+      responsive:{
+        0:{ items:1 },
+        768:{ items:2 },
+        1024:{ items:3 }
+      },
+      onInitialized: function() {
+        // Make all items equal height
+        var maxHeight = 0;
+        $('.takeaways-slider .item').each(function() {
+          var height = $(this).outerHeight();
+          if (height > maxHeight) {
+            maxHeight = height;
+          }
+        });
+        $('.takeaways-slider .item').css('min-height', maxHeight + 'px');
+      }
+    });
+
+    $('.testimonial-slider').owlCarousel({
+      items: 3,
+      margin: 30,
+      loop: true,
+      autoplay: false,
+      autoplayTimeout: 4000,
+      nav: true,
+      dots: true,
+      responsive:{
+        0:{ items:1 },
+        768:{ items:2 },
+        1024:{ items:3 }
+      },
+      onInitialized: function() {
+        // Make all items equal height
+        var maxHeight = 0;
+        $('.testimonial-slider .item').each(function() {
+          var height = $(this).outerHeight();
+          if (height > maxHeight) {
+            maxHeight = height;
+          }
+        });
+        $('.testimonial-slider .item').css('min-height', maxHeight + 'px');
+      }
+    });
+
+    $('.gallery-slider').owlCarousel({
+      loop: true,
+      center: true,
+      margin: 10,
+      nav: true,
+      navRewind: false,
+      dots: true,
+      autoplay: false,
+      smartSpeed: 600,
+      responsive:{
+        0:{
+          items: 1,
+          stagePadding: 20, // Reduced padding for mobile
+          center: true // Disable center for mobile
+        },
+        768:{
+          items: 1,
+          stagePadding: 100, // Original padding for desktop
+          center: true // Enable center for desktop
+        },
+        1024:{
+          items: 1,
+          stagePadding: 150, // Original padding for desktop
+          center: true // Enable center for desktop
+        },
+        1280:{
+          items: 1,
+          stagePadding: 300, // Original padding for desktop
+          center: true // Enable center for desktop
+        }
+      }
+    });
+
+    $('.review-slider').owlCarousel({
+      items: 1,
+      margin: 0,
+      loop: true,
+      autoplay: false,
+      autoplayTimeout: 4000,
+      nav: true,
+      dots: true
+    });
+
+    
+    // Style navigation arrows with Tailwind classes
+    $('.owl-carousel').addClass('relative');
+    $('.owl-carousel .owl-nav').addClass('flex justify-between absolute top-1/2 left-0 right-0 -translate-y-1/2 pointer-events-none z-10 m-0');
+    $('.owl-carousel .owl-nav button').addClass('w-5 h-5 md:w-10 md:h-10 rounded-full bg-metred text-white border-0 flex items-center justify-center text-xl cursor-pointer transition-all duration-300 pointer-events-auto shadow-lg m-0 p-0 absolute');
+    $('.owl-carousel .owl-nav button.owl-prev').addClass('-left-2 lg:-left-6');
+    $('.owl-carousel .owl-nav button.owl-next').addClass('-right-2 lg:-right-6');
+    // Testimonial Slider
+    $('.testimonial-slider.owl-carousel .owl-nav').removeClass('flex justify-between absolute top-1/2 left-0 right-0 -translate-y-1/2 pointer-events-none z-10 m-0');
+    $('.testimonial-slider.owl-carousel .owl-nav').addClass('flex relative justify-center md:absolute top-auto md:-top-16 right-0 pointer-events-none z-10 m-0 gap-2');
+    $('.testimonial-slider.owl-carousel .owl-nav button').removeClass('absolute');
+    $('.testimonial-slider.owl-carousel .owl-nav button').addClass('relative md:absolute');
+    $('.testimonial-slider.owl-carousel .owl-nav button.owl-prev').removeClass('-left-2 lg:-left-6');
+    $('.testimonial-slider.owl-carousel .owl-nav button.owl-next').removeClass('-right-2 lg:-right-6');
+    $('.testimonial-slider.owl-carousel .owl-nav button.owl-prev').addClass('left-0 md:-left-24');
+    $('.testimonial-slider.owl-carousel .owl-nav button.owl-next').addClass('right-0 md:-right-0');
+    // Gallery Slider
+    $('.gallery-slider.owl-carousel .owl-nav button.owl-prev').addClass('left-2 lg:left-40 xl:left-60');
+    $('.gallery-slider.owl-carousel .owl-nav button.owl-next').addClass('right-2 lg:right-40 xl:right-60');
+    // Hear From MET Slider
+    $('.review-slider.owl-carousel .owl-nav').removeClass('flex justify-between absolute top-1/2 left-0 right-0 -translate-y-1/2 pointer-events-none z-10 m-0');
+    $('.review-slider.owl-carousel .owl-nav').addClass('flex relative justify-center md:absolute top-auto md:-top-16 right-0 pointer-events-none z-10 m-0 gap-2');
+    $('.review-slider.owl-carousel .owl-nav button').removeClass('absolute');
+    $('.review-slider.owl-carousel .owl-nav button').addClass('relative md:absolute');
+    $('.review-slider.owl-carousel .owl-nav button.owl-prev').removeClass('-left-2 lg:-left-6');
+    $('.review-slider.owl-carousel .owl-nav button.owl-next').removeClass('-right-2 lg:-right-6');
+    $('.review-slider.owl-carousel .owl-nav button.owl-prev').addClass('left-0 lg:-left-24');
+    $('.review-slider.owl-carousel .owl-nav button.owl-next').addClass('right-0 lg:-right-0');
+
+
+    $('.owl-carousel .owl-nav button span').addClass('text-md md:text-2xl leading-none font-bold block text-white');
+    // Change arrow symbols to shorter arrows
+    $('.owl-carousel .owl-nav button.owl-prev span').html('‹');
+    $('.owl-carousel .owl-nav button.owl-next span').html('›');
+    // Hover effect - keep metred background, just scale
+    $('.owl-carousel .owl-nav button').hover(
+      function() { $(this).addClass('scale-110'); },
+      function() { $(this).removeClass('scale-110'); }
+    );
+
+    
+
+  });
+  </script>
+
+</body>
+
+</html>

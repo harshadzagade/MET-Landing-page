@@ -1,0 +1,1507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MET - Landing Page</title>
+  <link rel="icon" href="../landingpage/images/metlogo.ico" type="image/png" sizes="16x16">
+  <!-- Optional: Load custom font from Google Fonts -->
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet" >
+  <!-- ✅ Tailwind CSS v3.4.1 via CDN -->
+  <script src="https://cdn.tailwindcss.com/3.4.1"></script>
+
+  <!-- jQuery -->
+  <script src="../landingpage/js/jquery-3.6.0.min.js"></script>
+
+  <!-- Owl Carousel -->
+  <link rel="stylesheet" href="../landingpage/css/owl.carousel.min.css"/>
+  <link rel="stylesheet" href="../landingpage/css/owl.theme.default.min.css"/>
+
+  <script src="../landingpage/js/owl.carousel.min.js"></script>
+
+  <!-- Optional: Inline custom config (limited support) -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            metheader: '#2C2A2A',
+            metred: '#e72025',
+            metredbg: '#FFE9E9',
+            metborder: '#FAC6C8',
+            greybg: '#F7F7F7',
+            greyborder: '#EBEBEB',
+            greytext: '#63636391',
+            testimonialborder: '#63636391',
+          },
+          fontFamily: {
+            futura: ['"FuturaStd"', 'sans-serif'],
+            futurabold: ['"FuturaStd-Bold"', 'sans-serif'],
+            archivo: ['"ArchivoStd"', 'sans-serif'],
+            archivobold: ['"Archivo-Bold"', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+</head>
+
+<style>
+  @font-face {
+    font-family: FuturaStd;
+    src: url("../landingpage/fonts/FuturaStdMedium.otf");
+  }
+
+  @font-face {
+    font-family: FuturaStd-Bold;
+    src: url("../landingpage/fonts/FuturaStdBold.otf");
+  }
+
+  @font-face {
+    font-family: FuturaStd-Light;
+    src: url("../landingpage/fonts/FuturaStdLight.otf");
+  }
+  @font-face {
+      font-family: ArchivoStd;
+      src: url("../landingpage/fonts/archivo/Archivo-Regular.otf");
+  }
+
+  @font-face {
+      font-family: Archivo-Bold;
+      src: url("../landingpage/fonts/archivo/Archivo-SemiBold.otf");
+  }
+
+  @font-face {
+      font-family: Archivo-Light;
+      src: url("../landingpage/fonts/archivo/Archivo-ExtraLight.otf");
+  }
+
+  /* Override owl-carousel CSS for placement slider arrows */
+  .owl-carousel .owl-nav button.owl-next,
+  .owl-carousel .owl-nav button.owl-prev {
+    background-color: #e72025 !important;
+    background: #e72025 !important;
+  }
+
+  /* Make takeaways-slider items equal height */
+  .takeaways-slider .owl-stage {
+    display: flex;
+  }
+  .takeaways-slider .owl-item {
+    display: flex;
+    height: 100%;
+  }
+  .takeaways-slider .item {
+    display: flex;
+    width: 100%;
+  }  
+  /* Make Testimonial-slider items equal height */
+  .testimonial-slider .owl-stage {
+    display: flex;
+  }
+  .testimonial-slider .owl-item {
+    display: flex;
+    height: 100%;
+  }
+  .testimonial-slider .item {
+    display: flex;
+    width: 100%;
+  }
+  .testimonial-slider .item img{
+    width: auto !important;
+  }
+  /* Make Review-slider items equal height */
+  .review-slider .owl-stage {
+    display: flex;
+  }
+  .review-slider .owl-item {
+    display: flex;
+    height: 100%;
+  }
+  .review-slider .item {
+    display: flex;
+    width: 100%;
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .animate-marquee {
+    display: inline-block;
+    white-space: nowrap;
+    animation: marquee 10s linear infinite;
+  }
+
+  /* Each repeated item needs right padding to create the visible gap */
+  .marquee-item {
+    display: inline-block;
+    padding-right: 5rem;
+  }
+
+</style>
+
+<body class="font-archivo text-black">
+
+  <header class="header bg-metheader fixed text-white top-0 left-0 w-full z-50 shadow">
+    <div class="container mx-auto">
+      <div class="max-w-full mx-auto flex items-center justify-center md:justify-between pt-1 pb-1 md:pt-3 md:pb-3 pl-5 pr-5">
+        <div class="flex justify-center">
+          <img src="../landingpage/images/met_logo.png" alt="MET Logo" class="w-sm w-[70%] md:w-[80%]">
+        </div>
+        <div class="hidden md:flex items-center gap-4">
+          <a href="#" class="inline-flex items-center bg-metred text-white px-4 py-2 rounded-full text-sm">
+            Apply Now <i class="fa-solid fa-arrow-right ml-2"></i>
+          </a>
+          <a href="tel:+917208006694"
+            class="inline-flex items-center border border-white text-white px-4 py-2 rounded-full text-sm">
+            Download E-Brochure <i class="fa-solid fa-arrow-right ml-2"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="banner pt-[57px] md:pt-[72px] relative">
+    <div class="relative w-full z-10">
+      <!-- Banner Image -->
+      <img src="../root/images/root-banner_dk.png" alt="Banner" class="w-full object-cover hidden md:block relative ">
+      <img src="../root/images/root-banner_mb_v2.png" alt="Banner" class="w-full object-cover relative md:hidden">
+      <!-- Text Overlay -->
+      <div class="absolute top-10 lg:bottom-auto lg:top-1/2 left-[5%] w-[90%] lg:w-[40%] xl:w-[40%] transform lg:-translate-y-1/2 text-left">
+        <h1 class="text-3xl lg:text-4xl xl:text-5xl font-black mb-3 ">Post Graduation Diploma Management <span class="text-metred">(PGDM)</span></h1>
+        <h4 class="sm:text-lg md:text-2xl text-black">Marketing, Finance, HR, System and Operations. Add on specialisation in FinTech | MarTech | Media & Entertainment | Business Analytics | Start-Ups & New Enterprise Management.</h4>
+        <div class="flex flex-col md:flex-row md:items-center gap-4 mt-3">
+          <a href="#">
+            <button class="inline-flex items-center bg-metred text-white px-4 py-2 rounded-full text-lg">Apply Now <i class="fa-solid fa-arrow-right ml-2"></i></button>
+          </a>
+          <a href="tel:+917208006694">
+            <button class="inline-flex items-center border border-black px-4 py-2 rounded-full text-lg">Download E-Brochure <i class="fa-solid fa-arrow-right ml-2"></i></button>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Form Overlay -->
+    <div class="lg:absolute bottom-0 overflow-scroll right-[5%] w-[90%] lg:w-[40%] lg:top-1/2 xl:w-[30%] mx-auto transform lg:-translate-y-1/2 text-left border-2 lg:border-0 md-10 md:mt-0 rounded-2xl z-20">
+      <div class="form bg-white p-5 rounded-2xl text-center">
+        <h5 class="text-2xl font-archivobold">Register & Get <span class="text-metred">E-Brochure</span></h5>
+        <form action="#" method="POST" class="space-y-3 pt-4">
+          <!-- Name -->
+          <div>
+            <input type="text" id="name" name="name" placeholder="Your Full Name*" class="w-full p-3 bg-black/10 rounded-lg focus:outline-none focus:ring-2 transition" />
+          </div>
+          <!-- Email -->
+          <div>
+            <input type="email" id="email" name="email" placeholder="Your Email*" class="w-full p-3 bg-black/10 rounded-lg focus:outline-none focus:ring-2 transition" />
+          </div>
+          <!-- Mobile -->
+          <div>
+            <input type="number" id="mobile" name="mobile" placeholder="Your Mobile Number*" class="w-full p-3 bg-black/10 rounded-lg focus:outline-none focus:ring-2 transition" />
+          </div>
+          <!-- City -->
+          <div>
+            <input type="text" id="city" name="city" placeholder="Your City*" class="w-full p-3 bg-black/10 rounded-lg focus:outline-none focus:ring-2 transition" />
+          </div>
+          <!-- Qualification -->
+          <div>
+            <select type="text" name="qualification" placeholder="Enter Your City" class="w-full p-3 bg-black/10 rounded-lg focus:outline-none focus:ring-2 transition" >
+              <option value="" selected hidden>Select Your Qualification*</option>
+              <option value="Graduation">Graduation</option>
+              <option value="Post-Graduation">Post-Graduation</option>
+            </select>
+          </div>
+          <div class="text-left">
+            <input type="checkbox" id="privacy" name="privacy" value="true" checked="">
+            <label for="privacy"> I agree to receive information</label>
+          </div>
+          <div class="bg-metred text-xl text-white font-bold rounded-3xl pt-3 pb-3 pr-6 pl-6">
+            <button>Register Now</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="about pt-16 pb-16 bg-[linear-gradient(to_left,#e31c231a_0%,#ffffff1a_48%,#e31e241a_100%)]">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-10 gap-10">
+        <div class="col-span-10 lg:col-span-8 lg:col-start-2">
+          <div class="max-w-full mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 flex items-center">
+            <div>
+              <img src="../root/images/about-programme.png" alt="Programme Details" class="rounded-2xl"> 
+            </div>
+            <div>
+              <h2 class="text-4xl font-archivobold text-center md:text-start mb-5">About <span class="text-metred">Programme</span></h2>
+              <p class="mb-3">MET is ranked as one of the top B-schools in India that offers PGDM or PGDM in Mumbai with specialisations in Marketing, Finance, HR, System and Operations.PGDM at MET is approved by the All India Council for Technical Education (AICTE) & DTE, Govt. Of Maharashtra.</p>
+              <p class="mb-3">It is more than an MBA since its industry-driven course content and pedagogy empowers budding managers with technological tools and knowledge besides honing their managerial prowess. It is evident by the fact that a few thousand MET PGDM alumni are successfully employed at senior levels in leading corporate organisations, making their presence felt and many are successful entrepreneurs too.</p>
+              <p class="mb-3">Besides regular specializations in Finance, Marketing, Human Resources, System and Operations, MET PGDM offers New Age Add-on specialization in FinTech, MarTech, Media & Entertainment, Business Analytics, Start-ups & New Enterprise Management</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="video pt-10 pb-10">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-full mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 flex items-center">
+        <div>
+          <h2 class="text-4xl font-archivobold mb-3">About <span class="text-metred"> MET Institute of PGDM</span></h2>
+          <p class="mb-3">MET is ranked as one of the top B-schools in India that offers PGDM or PGDM in Mumbai with specialisations in Marketing, Finance, HR, System and Operations.</p>
+          <p class="mb-3">PGDM at MET is approved by the All India Council for Technical Education (AICTE) & DTE, Govt. Of Maharashtra. It is more than an MBA since its industry-driven course content and pedagogy empowers budding managers with technological tools and knowledge besides honing their managerial prowess. It is evident by the fact that a few thousand MET PGDM alumni are successfully employed at senior levels in leading corporate organisations, making their presence felt and many are successful entrepreneurs too. Besides regular specializations in Finance, Marketing, Human Resources, System and Operations, MET PGDM offers New Age Add-on specialization in FinTech, MarTech, Media & Entertainment, Business Analytics, Start-ups & New Enterprise Management.</p>
+        </div>
+        <div>
+          <img src="../root/images/video-thumbnail.png" alt="About Programme" class="video-trigger cursor-pointer rounded-lg" data-video-id="7b3M-aJI4l8" > 
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="advantage bg-[url('../landingpage/images/placement_bg.png')] bg-cover bg-center pt-10 pb-10" id="advantage">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-full mx-auto pb-3">
+          <h2 class="text-4xl font-archivobold text-center">Advantage <span class="text-metred">MET</span></h2>
+      </div>
+        <div class="max-w-full mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 pt-3">
+          <div class="bg-white p-8 text-center rounded-2xl shadow-[-0px_2px_10px_rgba(0,0,0,0.2)]">
+            <img src="../root/images/advantage-icon_01.png" alt="Advantage MET" class="max-w-none mx-auto mb-3">
+            <h6><span class="text-metred font-extrabold">#4th</span> Best B-School in Mumbai</h6>
+            <h6>by the Times B-School Survey 2025.</h6>
+          </div>
+          <div class="bg-white p-8 text-center rounded-2xl shadow-[-0px_2px_10px_rgba(0,0,0,0.2)]">
+            <img src="../root/images/advantage-icon_02.png" alt="Advantage MET" class="max-w-none mx-auto mb-3">
+            <h6><span class="text-metred font-extrabold">#14th</span> Best B-School in Mumbai</h6>
+            <h6>by the Times B-School Survey 2025.</h6>
+          </div>
+          <div class="bg-white p-8 text-center rounded-2xl shadow-[-0px_2px_10px_rgba(0,0,0,0.2)]">
+            <img src="../root/images/advantage-icon_03.png" alt="Advantage MET" class="max-w-none mx-auto mb-3">
+            <h6><span class="text-metred font-extrabold">#7th</span> Best B-School in Mumbai</h6>
+            <h6>by the Times B-School Survey 2025.</h6>
+          </div>
+          <div class="bg-white p-8 text-center rounded-2xl shadow-[-0px_2px_10px_rgba(0,0,0,0.2)]">
+            <img src="../root/images/advantage-icon_04.png" alt="Advantage MET" class="max-w-none mx-auto mb-3">
+            <h6><span class="text-metred font-extrabold">NSE</span> Cogencis</h6>
+            <h6>Finance Lab</h6>
+          </div>
+          <div class="bg-white p-8 text-center rounded-2xl shadow-[-0px_2px_10px_rgba(0,0,0,0.2)]">
+            <img src="../root/images/advantage-icon_05.png" alt="Advantage MET" class="max-w-none mx-auto mb-3">
+            <h6><span class="text-metred font-extrabold">MET</span> Incubation Centre</h6>
+            <h6>to foster entrepreneurship</h6>
+          </div>
+          <div class="bg-white p-8 text-center rounded-2xl shadow-[-0px_2px_10px_rgba(0,0,0,0.2)]">
+            <img src="../root/images/advantage-icon_06.png" alt="Advantage MET" class="max-w-none mx-auto mb-3">
+            <h6><span class="text-metred font-extrabold">Pedagogy</span></h6>
+            <h6>Learn and Apply pedagogy</h6>
+          </div>
+          <div class="bg-white p-8 text-center rounded-2xl shadow-[-0px_2px_10px_rgba(0,0,0,0.2)]">
+            <img src="../root/images/advantage-icon_07.png" alt="Advantage MET" class="max-w-none mx-auto mb-3">
+            <h6><span class="text-metred font-extrabold">Trimester</span></h6>
+            <h6>Based programme</h6>
+          </div>
+          <div class="bg-white p-8 text-center rounded-2xl shadow-[-0px_2px_10px_rgba(0,0,0,0.2)]">
+            <img src="../root/images/advantage-icon_08.png" alt="Advantage MET" class="max-w-none mx-auto mb-3">
+            <h6><span class="text-metred font-extrabold">Syllabus</span></h6>
+            <h6>Robust and concurrent syllabus</h6>
+          </div>
+          <div class="bg-white p-8 text-center rounded-2xl shadow-[-0px_2px_10px_rgba(0,0,0,0.2)] lg:col-start-2">
+            <img src="../root/images/advantage-icon_09.png" alt="Advantage MET" class="max-w-none mx-auto mb-3">
+            <h6><span class="text-metred font-extrabold">The-Art</span>  infrastructure</h6>
+            <h6>State-of-the-art infrastructure</h6>
+          </div>
+          <div class="bg-white p-8 text-center rounded-2xl shadow-[-0px_2px_10px_rgba(0,0,0,0.2)]">
+            <img src="../root/images/advantage-icon_10.png" alt="Advantage MET" class="max-w-none mx-auto mb-3">
+            <h6><span class="text-metred font-extrabold">Alumni</span></h6>
+            <h6>Strong Alumni Base</h6>
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <section class="placement pt-10 pb-10">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-full mx-auto grid grid-cols-1 md:grid-cols-10 gap-10">
+        <div class="col-span-10">
+          <div class="max-w-full mx-auto text-center mb-5">
+            <h2 class="text-4xl font-archivobold">Placement</h2>
+          </div>
+          <div class="max-w-full mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 flex items-center">
+            <div class="flex items-center justify-center">
+              <div class="bg-[linear-gradient(90deg,_#8F1E22_0%,_#E31E24_77%)] text-center rounded-2xl p-10 relative h-[140px] w-[270px] rotate-[6deg] transition-transform duration-300 hover:rotate-0">
+                <div class="absolute bg-[#FFE3E3] h-[140px] w-[270px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-2xl rotate-[-6deg] transition-transform duration-300 hover:rotate-0 flex flex-col items-center justify-center">
+                  <h3 class="text-5xl font-bold bg-gradient-to-r from-[#8F1E22] to-[#E31E24] bg-clip-text text-transparent">500+</h3>
+                  <h6 class="">Company Visit</h6>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center justify-center">
+              <div class="bg-[linear-gradient(90deg,_#8F1E22_0%,_#E31E24_77%)] text-center rounded-2xl p-10 relative h-[140px] w-[270px] rotate-[6deg] transition-transform duration-300 hover:rotate-0">
+                <div class="absolute bg-[#FFE3E3] h-[140px] w-[270px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-2xl rotate-[-6deg] transition-transform duration-300 hover:rotate-0 flex flex-col items-center justify-center">
+                  <h3 class="text-5xl font-bold bg-gradient-to-r from-[#8F1E22] to-[#E31E24] bg-clip-text text-transparent">20 LPA</h3>
+                  <h6 class="">Highest Salary</h6>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center justify-center">
+              <div class="bg-[linear-gradient(90deg,_#8F1E22_0%,_#E31E24_77%)] text-center rounded-2xl p-10 relative h-[140px] w-[270px] rotate-[6deg] transition-transform duration-300 hover:rotate-0">
+                <div class="absolute bg-[#FFE3E3] h-[140px] w-[270px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-2xl rotate-[-6deg] transition-transform duration-300 hover:rotate-0 flex flex-col items-center justify-center">
+                  <h3 class="text-5xl font-bold bg-gradient-to-r from-[#8F1E22] to-[#E31E24] bg-clip-text text-transparent">8.5 LPA</h3>
+                  <h6 class="">Average Salary</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="client-logo">
+    <div class="max-w-full mx-auto flex items-center justify-center p-1">
+      <div class="owl-carousel placement-slider">
+        <div class="item">
+          <img src="../root/images/placement-logo_01.png" alt="Testimonial" class="w-auto mx-auto">
+        </div>
+        <div class="item">
+          <img src="../root/images/placement-logo_02.png" alt="Testimonial" class="w-auto mx-auto">
+        </div>
+        <div class="item">
+          <img src="../root/images/placement-logo_03.png" alt="Testimonial" class="w-auto mx-auto">
+        </div>
+        <div class="item">
+          <img src="../root/images/placement-logo_04.png" alt="Testimonial" class="w-auto mx-auto">
+        </div>
+        <div class="item">
+          <img src="../root/images/placement-logo_05.png" alt="Testimonial" class="w-auto mx-auto">
+        </div>
+        <div class="item">
+          <img src="../root/images/placement-logo_06.png" alt="Testimonial" class="w-auto mx-auto">
+        </div>
+        <div class="item">
+          <img src="../root/images/placement-logo_07.png" alt="Testimonial" class="w-auto mx-auto">
+        </div>
+        <div class="item">
+          <img src="../root/images/placement-logo_08.png" alt="Testimonial" class="w-auto mx-auto">
+        </div>
+      </div>
+    </div>
+    <div class="max-w-full mx-auto flex items-center justify-center p-1">
+      <div class="owl-carousel placement2-slider">
+        <div class="item">
+          <img src="../root/images/placement-logo_01.png" alt="Testimonial" class="w-auto mx-auto">
+        </div>
+        <div class="item">
+          <img src="../root/images/placement-logo_02.png" alt="Testimonial" class="w-auto mx-auto">
+        </div>
+        <div class="item">
+          <img src="../root/images/placement-logo_03.png" alt="Testimonial" class="w-auto mx-auto">
+        </div>
+        <div class="item">
+          <img src="../root/images/placement-logo_04.png" alt="Testimonial" class="w-auto mx-auto">
+        </div>
+        <div class="item">
+          <img src="../root/images/placement-logo_05.png" alt="Testimonial" class="w-auto mx-auto">
+        </div>
+        <div class="item">
+          <img src="../root/images/placement-logo_06.png" alt="Testimonial" class="w-auto mx-auto">
+        </div>
+        <div class="item">
+          <img src="../root/images/placement-logo_07.png" alt="Testimonial" class="w-auto mx-auto">
+        </div>
+        <div class="item">
+          <img src="../root/images/placement-logo_08.png" alt="Testimonial" class="w-auto mx-auto">
+        </div>
+      </div>
+    </div>
+    <div class="max-w-full mx-auto flex items-center justify-center p-1">
+      <div class="owl-carousel placement-slider">
+        <div class="item">
+          <img src="../root/images/placement-logo_01.png" alt="Testimonial" class="w-auto mx-auto">
+        </div>
+        <div class="item">
+          <img src="../root/images/placement-logo_02.png" alt="Testimonial" class="w-auto mx-auto">
+        </div>
+        <div class="item">
+          <img src="../root/images/placement-logo_03.png" alt="Testimonial" class="w-auto mx-auto">
+        </div>
+        <div class="item">
+          <img src="../root/images/placement-logo_04.png" alt="Testimonial" class="w-auto mx-auto">
+        </div>
+        <div class="item">
+          <img src="../root/images/placement-logo_05.png" alt="Testimonial" class="w-auto mx-auto">
+        </div>
+        <div class="item">
+          <img src="../root/images/placement-logo_06.png" alt="Testimonial" class="w-auto mx-auto">
+        </div>
+        <div class="item">
+          <img src="../root/images/placement-logo_07.png" alt="Testimonial" class="w-auto mx-auto">
+        </div>
+        <div class="item">
+          <img src="../root/images/placement-logo_08.png" alt="Testimonial" class="w-auto mx-auto">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="programme pt-20 pb-20 bg-[linear-gradient(to_left,#e31c231a_0%,#ffffff1a_48%,#e31e241a_100%)]" id="programme">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-full mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div>
+          <h2 class="block lg:hidden text-4xl font-archivobold text-center mb-5">Programme <span class="text-metred">Details</span></h2>
+          <img src="../root/images/programme-details.png" alt="Programme Details" class="rounded-2xl"> 
+        </div>
+        <div class="accordion-group">
+          <h2 class="hidden lg:block text-4xl font-archivobold text-start mb-5">Programme <span class="text-metred">Details</span></h2>
+          <!-- Accordion Item 1 (Open by default) -->
+          <div class="accordion-wrapper bg-white rounded-2xl mb-5 border border-metred">
+            <button class="accordion-btn w-full p-4 flex justify-between items-center" data-accordion-btn>
+              <span class="text-xl">Programme Highlights</span>
+              <svg class="accordion-icon w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor"
+                stroke-width="2" viewBox="0 0 24 24">
+                <path d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+
+            <div class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+              <div class="border-t border-black/10 p-6">
+                <ul class="list-disc pl-6 space-y-1">
+                  <li>Trimester based programme</li>
+                    <li>Learn and Apply pedagogy</li>
+                    <li>Robust and concurrent syllabus</li>
+                    <li>Evaluated Independent Study Courses</li>
+                    <li>New Age Add on Specialisations: FinTech, MarTech</li>
+                    <li>20 LPA highest CTC</li>
+                    <li>Experiential Learning</li>
+                    <li>Latest management techniques</li>
+                    <li>Industry Faculty & Mentors</li>
+                    <li>Rich academic environment & Infra</li>
+                    <li>Nurturing entrepreneurship</li>
+                    <li>Opportunity to publish research papers</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Accordion Item 2 -->
+          <div class="accordion-wrapper bg-white rounded-2xl mb-5 border border-metred">
+            <button class="accordion-btn w-full p-4 flex justify-between items-center" data-accordion-btn>
+              <span class="text-xl">Who Can Apply ?</span>
+              <svg class="accordion-icon w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor"
+                stroke-width="2" viewBox="0 0 24 24">
+                <path d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+
+            <div class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+              <div class="border-t border-black/10 p-6">
+                <ul class="list-disc pl-6 space-y-1">
+                  <li>Trimester based programme</li>
+                    <li>Learn and Apply pedagogy</li>
+                    <li>Robust and concurrent syllabus</li>
+                    <li>Evaluated Independent Study Courses</li>
+                    <li>New Age Add on Specialisations: FinTech, MarTech</li>
+                    <li>20 LPA highest CTC</li>
+                    <li>Experiential Learning</li>
+                    <li>Latest management techniques</li>
+                    <li>Industry Faculty & Mentors</li>
+                    <li>Rich academic environment & Infra</li>
+                    <li>Nurturing entrepreneurship</li>
+                    <li>Opportunity to publish research papers</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Accordion Item 3 -->
+          <div class="accordion-wrapper bg-white rounded-2xl mb-5 border border-metred">
+            <button class="accordion-btn w-full p-4 flex justify-between items-center" data-accordion-btn>
+              <span class="text-xl">Selection Procedure</span>
+              <svg class="accordion-icon w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor"
+                stroke-width="2" viewBox="0 0 24 24">
+                <path d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+
+            <div class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+              <div class="border-t border-black/10 p-6">
+                <ul class="list-disc pl-6 space-y-1">
+                  <li>Trimester based programme</li>
+                    <li>Learn and Apply pedagogy</li>
+                    <li>Robust and concurrent syllabus</li>
+                    <li>Evaluated Independent Study Courses</li>
+                    <li>New Age Add on Specialisations: FinTech, MarTech</li>
+                    <li>20 LPA highest CTC</li>
+                    <li>Experiential Learning</li>
+                    <li>Latest management techniques</li>
+                    <li>Industry Faculty & Mentors</li>
+                    <li>Rich academic environment & Infra</li>
+                    <li>Nurturing entrepreneurship</li>
+                    <li>Opportunity to publish research papers</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <section class="syllabus bg-[url('../root/images/syllabus_bg.png')] bg-cover bg-center pt-10 pb-10" id="syllabus">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-full mx-auto text-center mb-5">
+        <h2 class="text-4xl font-archivobold">Syllabus</h2>
+      </div>
+      <div class="max-w-full mx-auto grid grid-cols-1 lg:grid-cols-6 gap-10">
+        <div class="lg:col-span-2">
+          <img src="../root/images/syllabus.png" alt="Programme Details" class="rounded-2xl w-full"> 
+        </div>
+        <div class="lg:col-span-4 accordion-group">
+          <!-- Accordion Item 1 (Open by default) -->
+          <div class="bg-white rounded-2xl mb-5">
+            <button class="accordion-btn w-full pl-5 pr-5 pt-3 pb-3 flex justify-between items-center" data-accordion-btn>
+              <div class="flex items-center gap-3">
+                <span class="flex h-8 w-8 items-center justify-center rounded-full text-white text-base bg-[linear-gradient(90deg,_#E31E24_20%,_#8F1E22_100%)]">1</span>            
+                <span class="text-xl">Trimester 1</span>
+              </div>
+              <svg class="accordion-icon w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor"
+                stroke-width="2" viewBox="0 0 24 24">
+                <path d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+
+            <div class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+              <div class="border-t border-black/10 p-6">
+                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
+                  <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">Trimester based programme</li>
+                  <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">Learn and Apply pedagogy</li>
+                  <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">Robust and concurrent syllabus</li>
+                  <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">Evaluated Independent Study Courses</li>
+                  <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">New Age Add on Specialisations: FinTech, MarTech</li>
+                  <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">20 LPA highest CTC</li>
+                  <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">Experiential Learning</li>
+                  <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">Latest management techniques</li>
+                  <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">Industry Faculty & Mentors</li>
+                  <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">Rich academic environment & Infra</li>
+                  <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">Nurturing entrepreneurship</li>
+                  <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">Opportunity to publish research papers</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Accordion Item 2 -->
+          <div class="bg-white rounded-2xl mb-5">
+            <button class="accordion-btn w-full pl-5 pr-5 pt-3 pb-3 flex justify-between items-center" data-accordion-btn>
+              <div class="flex items-center gap-3">
+                <span class="flex h-8 w-8 items-center justify-center rounded-full text-white text-base bg-[linear-gradient(90deg,_#E31E24_20%,_#8F1E22_100%)]">2</span>            
+                <span class="text-xl">Trimester 2</span>
+              </div>
+              <svg class="accordion-icon w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor"
+                stroke-width="2" viewBox="0 0 24 24">
+                <path d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+
+            <div class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+              <div class="border-t border-black/10 p-6">
+                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
+                  <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top"  >Trimester based programme</li>
+                  <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">Learn and Apply pedagogy</li>
+                  <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">Robust and concurrent syllabus</li>
+                  <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">Evaluated Independent Study Courses</li>
+                  <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">New Age Add on Specialisations: FinTech, MarTech</li>
+                  <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">20 LPA highest CTC</li>
+                  <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">Experiential Learning</li>
+                  <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">Latest management techniques</li>
+                  <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">Industry Faculty & Mentors</li>
+                  <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">Rich academic environment & Infra</li>
+                  <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">Nurturing entrepreneurship</li>
+                  <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">Opportunity to publish research papers</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Accordion Item 3 -->
+          <div class="bg-white rounded-2xl mb-5">
+            <button class="accordion-btn w-full pl-5 pr-5 pt-3 pb-3 flex justify-between items-center" data-accordion-btn>
+              <div class="flex items-center gap-3">
+                <span class="flex h-8 w-8 items-center justify-center rounded-full text-white text-base bg-[linear-gradient(90deg,_#E31E24_20%,_#8F1E22_100%)]">3</span>            
+                <span class="text-xl">Trimester 3</span>
+              </div>
+              <svg class="accordion-icon w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor"
+                stroke-width="2" viewBox="0 0 24 24">
+                <path d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+
+            <div class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+              <div class="border-t border-black/10 p-6">
+                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
+                  <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top"  >Trimester based programme</li>
+                    <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">Learn and Apply pedagogy</li>
+                    <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">Robust and concurrent syllabus</li>
+                    <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">Evaluated Independent Study Courses</li>
+                    <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">New Age Add on Specialisations: FinTech, MarTech</li>
+                    <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">20 LPA highest CTC</li>
+                    <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">Experiential Learning</li>
+                    <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">Latest management techniques</li>
+                    <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">Industry Faculty & Mentors</li>
+                    <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">Rich academic environment & Infra</li>
+                    <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">Nurturing entrepreneurship</li>
+                    <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">Opportunity to publish research papers</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Accordion Item 4 -->
+          <div class="bg-white rounded-2xl mb-5">
+            <button class="accordion-btn w-full pl-5 pr-5 pt-3 pb-3 flex justify-between items-center" data-accordion-btn>
+              <div class="flex items-center gap-3">
+                <span class="flex h-8 w-8 items-center justify-center rounded-full text-white text-base bg-[linear-gradient(90deg,_#E31E24_20%,_#8F1E22_100%)]">4</span>            
+                <span class="text-xl">Trimester 4</span>
+              </div>
+              <svg class="accordion-icon w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor"
+                stroke-width="2" viewBox="0 0 24 24">
+                <path d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+
+            <div class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+              <div class="border-t border-black/10 p-6">
+                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
+                  <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top"  >Trimester based programme</li>
+                    <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">Learn and Apply pedagogy</li>
+                    <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">Robust and concurrent syllabus</li>
+                    <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">Evaluated Independent Study Courses</li>
+                    <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">New Age Add on Specialisations: FinTech, MarTech</li>
+                    <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">20 LPA highest CTC</li>
+                    <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">Experiential Learning</li>
+                    <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">Latest management techniques</li>
+                    <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">Industry Faculty & Mentors</li>
+                    <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">Rich academic environment & Infra</li>
+                    <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">Nurturing entrepreneurship</li>
+                    <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">Opportunity to publish research papers</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Accordion Item 5 -->
+          <div class="bg-white rounded-2xl mb-5">
+            <button class="accordion-btn w-full pl-5 pr-5 pt-3 pb-3 flex justify-between items-center" data-accordion-btn>
+              <div class="flex items-center gap-3">
+                <span class="flex h-8 w-8 items-center justify-center rounded-full text-white text-base bg-[linear-gradient(90deg,_#E31E24_20%,_#8F1E22_100%)]">5</span>            
+                <span class="text-xl">Trimester 5</span>
+              </div>
+              <svg class="accordion-icon w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor"
+                stroke-width="2" viewBox="0 0 24 24">
+                <path d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+
+            <div class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+              <div class="border-t border-black/10 p-6">
+                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
+                  <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top"  >Trimester based programme</li>
+                    <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">Learn and Apply pedagogy</li>
+                    <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">Robust and concurrent syllabus</li>
+                    <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">Evaluated Independent Study Courses</li>
+                    <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">New Age Add on Specialisations: FinTech, MarTech</li>
+                    <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">20 LPA highest CTC</li>
+                    <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">Experiential Learning</li>
+                    <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">Latest management techniques</li>
+                    <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">Industry Faculty & Mentors</li>
+                    <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">Rich academic environment & Infra</li>
+                    <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">Nurturing entrepreneurship</li>
+                    <li class="pl-8 bg-[url('../root/images/list-icon.png')] bg-no-repeat bg-left-top">Opportunity to publish research papers</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="empowering bg-[url('../root/images/empowering_bg.png')] bg-cover bg-center pt-14 pb-14">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-full mx-auto grid grid-cols-1 lg:grid-cols-2 items-center">
+        <div class="text-center lg:text-start">
+          <h2 class="text-4xl font-archivobold text-white">Empowering learners of tomorrow</h2>
+          <p class="text-white mt-2">Achieve greater success in your career by standing out from your peers and unlocking new opportunities with MET PGDM</p>
+        </div>
+        <div class="text-center lg:text-end mt-3 lg:mt-0">
+          <a href="#">
+            <button class="text-white px-8 py-3 rounded-full border border-white">Apply Now</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="apply-heading pt-20">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-full mx-auto text-center mb-5">
+        <h2 class="text-4xl font-archivobold">How to  <span class="text-metred">Apply?</span></h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="apply relative pt-5 pb-5 lg:pt-20 lg:pb-20">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="max-w-full mx-auto grid grid-cols-1 lg:grid-cols-5">
+        <div class="hidden lg:block absolute inset-x-4 sm:inset-x-6 lg:inset-x-8 top-1/2 h-[2px] bg-metred z-0"></div>
+        <div class="lg:hidden absolute left-5 sm:left-7 top-1/2 h-full w-0 border-l-2 border-dashed border-metred -translate-y-1/2 z-0"></div>
+        <div class="col-span-1 relative">
+          <div class="absolute left-0 top-1/2 transform -translate-y-1/2 z-20">
+            <div class="w-3 h-3 rounded-full bg-metred flex items-center justify-center text-white">
+            </div>
+          </div>
+          <div class="text-left transform lg:-translate-y-16 flex items-center lg:items-start justify-start lg:pb-3">
+            <div class="w-40">
+              <img src="../root/images/apply-icon_01.png" alt="How to Apply" class="">
+            </div>
+            <div>
+              <h4 class="font-black text-lg">Step 1</h4>
+              <p class="text-sm">Assess your current security framework against ISO 27001:2022 to identify compliance gaps.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-span-1 relative">
+          <div class="absolute left-0 top-1/2 transform -translate-y-1/2 z-20">
+            <div class="w-3 h-3 rounded-full bg-metred flex items-center justify-center text-white">
+            </div>
+          </div>
+          <div class="text-left transform lg:translate-y-16 flex items-center lg:items-start justify-start lg:pt-3">
+            <div class="w-40">
+              <img src="../root/images/apply-icon_02.png" alt="How to Apply" class="">
+            </div>
+            <div>
+              <h4 class="font-black text-lg">Step 2</h4>
+              <p class="text-sm text-gray-600">Assess your current security framework against ISO 27001:2022 to identify compliance gaps.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-span-1 relative">
+          <div class="absolute left-0 top-1/2 transform -translate-y-1/2 z-20">
+            <div class="w-3 h-3 rounded-full bg-metred flex items-center justify-center text-white">
+            </div>
+          </div>
+          <div class="text-left transform lg:-translate-y-16 flex items-center lg:items-start justify-start lg:pb-3">
+            <div class="w-40">
+              <img src="../root/images/apply-icon_01.png" alt="How to Apply" class="">
+            </div>
+            <div>
+              <h4 class="font-black text-lg">Step 3</h4>
+              <p class="text-sm text-gray-600">Assess your current security framework against ISO 27001:2022 to identify compliance gaps.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-span-1 relative">
+          <div class="absolute left-0 top-1/2 transform -translate-y-1/2 z-20">
+            <div class="w-3 h-3 rounded-full bg-metred flex items-center justify-center text-white">
+            </div>
+          </div>
+          <div class="text-left transform lg:translate-y-16 flex items-center lg:items-start justify-start lg:pt-3">
+            <div class="w-40">
+              <img src="../root/images/apply-icon_02.png" alt="How to Apply" class="">
+            </div>
+            <div>
+              <h4 class="font-black text-lg">Step 4</h4>
+              <p class="text-sm text-gray-600">Assess your current security framework against ISO 27001:2022 to identify compliance gaps.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-span-1 relative">
+          <div class="absolute left-0 top-1/2 transform -translate-y-1/2 z-20">
+            <div class="w-3 h-3 rounded-full bg-metred flex items-center justify-center text-white">
+            </div>
+          </div>
+          <div class="text-left transform lg:-translate-y-16 flex items-center lg:items-start justify-start lg:pb-3">
+            <div class="w-40">
+              <img src="../root/images/apply-icon_01.png" alt="How to Apply" class="">
+            </div>
+            <div>
+              <h4 class="font-black text-lg">Step 5</h4>
+              <p class="text-sm text-gray-600">Assess your current security framework against ISO 27001:2022 to identify compliance gaps.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="specialisation pt-10 pb-10" id="specialisation">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-full mx-auto grid grid-cols-1 xl:grid-cols-2">
+        <div class="xl:border-r xl:border-greyborder xl:pr-6">
+          <h2 class="text-4xl font-archivobold pb-5 text-center md:text-start">Specialisation</h2>
+          <div class="max-w-full mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div class="border border-greyborder p-6 rounded-2xl flex flex-col items-center justify-center text-center min-h-[230px]">
+                <img src="../landingpage/images/specialisation-icon_01.png" alt="Specialisation" class="pb-2">
+                <h5 class="text-lg">PGDM in Finance</h5>
+            </div>
+            <div class="border border-greyborder p-6 rounded-2xl flex flex-col items-center justify-center text-center min-h-[230px]">
+                <img src="../landingpage/images/specialisation-icon_02.png" alt="Specialisation" class="pb-2">
+                <h5 class="text-lg">PGDM in Human Resource</h5>
+            </div>
+            <div class="border border-greyborder p-6 rounded-2xl flex flex-col items-center justify-center text-center min-h-[230px]">
+                <img src="../landingpage/images/specialisation-icon_03.png" alt="Specialisation" class="pb-2">
+                <h5 class="text-lg">PGDM in Marketing</h5>
+            </div>
+            <div class="border border-greyborder p-6 rounded-2xl flex flex-col items-center justify-center text-center min-h-[230px]">
+                <img src="../landingpage/images/specialisation-icon_04.png" alt="Specialisation" class="pb-2">
+                <h5 class="text-lg">PGDM in Operation</h5>
+            </div>
+            <div class="border border-greyborder p-6 rounded-2xl flex flex-col items-center justify-center text-center min-h-[230px]">
+                <img src="../landingpage/images/specialisation-icon_05.png" alt="Specialisation" class="pb-2">
+                <h5 class="text-lg">PGDM in Systems</h5>
+            </div>
+          </div>
+        </div>
+        <div class="pt-6 xl:pt-0 xl:pl-6">
+          <h2 class="text-4xl font-archivobold pb-5 text-center md:text-start">Add On</h2>
+          <div class="max-w-full mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div class="border border-greyborder p-6 rounded-2xl flex flex-col items-center justify-center text-center min-h-[230px]">
+                <img src="../landingpage/images/specialisation-icon_06.png" alt="Specialisation" class="pb-2">
+                <h5 class="text-lg">Fintech</h5>
+            </div>
+            <div class="border border-greyborder p-6 rounded-2xl flex flex-col items-center justify-center text-center min-h-[230px]">
+                <img src="../landingpage/images/specialisation-icon_07.png" alt="Specialisation" class="pb-2">
+                <h5 class="text-lg">Martech</h5>
+            </div>
+            <div class="border border-greyborder p-6 rounded-2xl flex flex-col items-center justify-center text-center min-h-[230px]">
+                <img src="../landingpage/images/specialisation-icon_08.png" alt="Specialisation" class="pb-2">
+                <h5 class="text-lg">Media & Entertainment</h5>
+            </div>
+            <div class="border border-greyborder p-6 rounded-2xl flex flex-col items-center justify-center text-center min-h-[230px]">
+                <img src="../landingpage/images/specialisation-icon_09.png" alt="Specialisation" class="pb-2">
+                <h5 class="text-lg">Start-ups and New Enterprise Management</h5>
+            </div>
+            <div class="border border-greyborder p-6 rounded-2xl flex flex-col items-center justify-center text-center min-h-[230px]">
+                <img src="../landingpage/images/specialisation-icon_10.png" alt="Specialisation" class="pb-2">
+                <h5 class="text-lg">Business Analytics</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonial pt-10 pb-10 bg-[linear-gradient(to_left,#e31c231a_0%,#ffffff1a_48%,#e31e241a_100%)]" id="testimonial">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-full mx-auto text-center mb-5">
+        <h2 class="text-4xl font-archivobold">Testimonials</h2>
+      </div>
+      <div class="max-w-full mx-auto flex items-center justify-center p-1">
+        <div class="owl-carousel testimonial-slider">
+          <div class="item p-1">
+            <div class="shadow-[inset_-2px_-2px_5px_rgba(0,0,0,0.1)] p-8 rounded-2xl">
+              <div class="flex items-center justify-start gap-8">
+                <div>
+                  <img src="../root/images/testimonial.png" alt="Testimonial" class="w-auto mx-auto">
+                </div>
+                <div class="text-start">
+                  <h4 class="text-2xl">Rachel Bing</h4>
+                  <div class="flex items-center gap-2">
+                    <span class="text-lg font-medium">5.0</span>
+                    <div class="flex gap-1 text-yellow-400 text-lg">
+                      <span>★</span>
+                      <span>★</span>
+                      <span>★</span>
+                      <span>★</span>
+                      <span>★</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-5 border-l-2 pl-3 border-metred">
+                <p>Lorem ipsum dolor sit amet consectetur. Tortor porta quam eu eget. Tortor sed libero at venenatis tortor sit.
+                  Pulvinar integer tristique facilisis tortor ipsum. Felis massa eu dolor adipiscing elit. Pretium aenean eget sed
+                  consectetur amet risus turpis tellus cursus. Odio nisi in varius amet amet arcu velit interdum. Ut ac enim et
+                  viverra vel ornare volutpat faucibus.</p>
+              </div>
+            </div>
+          </div>
+          <div class="item p-1">
+            <div class="shadow-[inset_-2px_-2px_5px_rgba(0,0,0,0.1)] p-8 rounded-2xl">
+              <div class="flex items-center justify-start gap-8">
+                <div>
+                  <img src="../root/images/testimonial.png" alt="Testimonial" class="w-auto mx-auto">
+                </div>
+                <div class="text-start">
+                  <h4 class="text-2xl">Rachel Bing</h4>
+                  <div class="flex items-center gap-2">
+                    <span class="text-lg font-medium">5.0</span>
+                    <div class="flex gap-1 text-yellow-400 text-lg">
+                      <span>★</span>
+                      <span>★</span>
+                      <span>★</span>
+                      <span>★</span>
+                      <span>★</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-5 border-l-2 pl-3 border-metred">
+                <p>Lorem ipsum dolor sit amet consectetur. Tortor porta quam eu eget. Tortor sed libero at venenatis tortor sit.
+                  Pulvinar integer tristique facilisis tortor ipsum. Felis massa eu dolor adipiscing elit. Pretium aenean eget sed
+                  consectetur amet risus turpis tellus cursus. Odio nisi in varius amet amet arcu velit interdum. Ut ac enim et
+                  viverra vel ornare volutpat faucibus.</p>
+              </div>
+            </div>
+          </div>
+          <div class="item p-1">
+            <div class="shadow-[inset_-2px_-2px_5px_rgba(0,0,0,0.1)] p-8 rounded-2xl">
+              <div class="flex items-center justify-start gap-8">
+                <div>
+                  <img src="../root/images/testimonial.png" alt="Testimonial" class="w-auto mx-auto">
+                </div>
+                <div class="text-start">
+                  <h4 class="text-2xl">Rachel Bing</h4>
+                  <div class="flex items-center gap-2">
+                    <span class="text-lg font-medium">5.0</span>
+                    <div class="flex gap-1 text-yellow-400 text-lg">
+                      <span>★</span>
+                      <span>★</span>
+                      <span>★</span>
+                      <span>★</span>
+                      <span>★</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-5 border-l-2 pl-3 border-metred">
+                <p>Lorem ipsum dolor sit amet consectetur. Tortor porta quam eu eget. Tortor sed libero at venenatis tortor sit.
+                  Pulvinar integer tristique facilisis tortor ipsum. Felis massa eu dolor adipiscing elit. Pretium aenean eget sed
+                  consectetur amet risus turpis tellus cursus. Odio nisi in varius amet amet arcu velit interdum. Ut ac enim et
+                  viverra vel ornare volutpat faucibus.</p>
+              </div>
+            </div>
+          </div>
+          <div class="item p-1">
+            <div class="shadow-[inset_-2px_-2px_5px_rgba(0,0,0,0.1)] p-8 rounded-2xl">
+              <div class="flex items-center justify-start gap-8">
+                <div>
+                  <img src="../root/images/testimonial.png" alt="Testimonial" class="w-auto mx-auto">
+                </div>
+                <div class="text-start">
+                  <h4 class="text-2xl">Rachel Bing</h4>
+                  <div class="flex items-center gap-2">
+                    <span class="text-lg font-medium">5.0</span>
+                    <div class="flex gap-1 text-yellow-400 text-lg">
+                      <span>★</span>
+                      <span>★</span>
+                      <span>★</span>
+                      <span>★</span>
+                      <span>★</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-5 border-l-2 pl-3 border-metred">
+                <p>Lorem ipsum dolor sit amet consectetur. Tortor porta quam eu eget. Tortor sed libero at venenatis tortor sit.
+                  Pulvinar integer tristique facilisis tortor ipsum. Felis massa eu dolor adipiscing elit. Pretium aenean eget sed
+                  consectetur amet risus turpis tellus cursus. Odio nisi in varius amet amet arcu velit interdum. Ut ac enim et
+                  viverra vel ornare volutpat faucibus.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="takeaways pt-10 pb-10">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-full mx-auto text-center mb-5">
+        <h2 class="text-4xl font-archivobold">Key <span class="text-metred">Takeaways</span></h2>
+      </div>
+      <div class="max-w-full mx-auto grid grid-cols-1 lg:grid-cols-3">
+        <div class="p-8 border-b-[2px] lg:border-r-[2px] border-metred">
+          <h4 class="text-2xl font-black mb-3">Strong theoretical & practical knowledge</h4>
+          <p>We value individuals who demonstrate resourcefulness, versatility and strong teamwork. Our team members take responsibility, embracing tasks beyond their regular scope and stepping outside their comfort zones to drive success.</p>
+        </div>
+        <div class="p-8 border-b-[2px] lg:border-r-[2px] border-metred">
+          <h4 class="text-2xl font-black mb-3">Latest tools and techniques</h4>
+          <p>We pride ourselves on a deep understanding of our processes, equipment and standard operating procedures. Our team uses sound judgment to resolve challenges, involving others in the decision-making process when needed, all while adhering to company policies.</p>
+        </div>
+        <div class="p-8 border-b-[2px] border-metred">
+          <h4 class="text-2xl font-black mb-3">Leadership development</h4>
+          <p>Efficiency and reliability are key. Our team members excel at managing their time, ensuring tasks are completed on schedule and consistently delivering high-quality work.</p>
+        </div>
+        <div class="p-8 border-b-[2px] lg:border-b-[0px] lg:border-r-[2px] border-metred">
+          <h4 class="text-2xl font-black mb-3">Modern Day Pedagogy</h4>
+          <p>We foster a culture of continuous learning. Our team members possess the necessary expertise to excel in their roles and proactively seek new skills to enhance their capabilities.</p>
+        </div>
+        <div class="p-8 border-b-[2px] lg:border-b-[0px] lg:border-r-[2px] border-metred">
+          <h4 class="text-2xl font-black mb-3">Opportunities</h4>
+          <p>Innovation is at the heart of Synclature's growth. We encourage creativity and initiative, with team members actively contributing ideas for new products, improvements and process enhancements.</p>
+        </div>
+        <div class="p-8 border-b-[2px] lg:border-b-[0px] border-metred">
+          <h4 class="text-2xl font-black mb-3">Successful Career</h4>
+          <p>Excellence in every detail matters. Our team ensures that work is thorough, accurate and complete, maintaining the highest standards of quality.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq pt-10 pb-10 bg-[linear-gradient(to_left,#e31c231a_0%,#ffffff1a_48%,#e31e241a_100%)]" id="faq">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-full mx-auto flex items-center justify-center mb-5">
+        <h2 class="text-4xl font-archivobold">Frequently <span class="text-metred">Asked Questions</span></h2>
+      </div>
+      <div class="max-w-full mx-auto grid grid-cols-1 md:grid-cols-2 md:gap-8">
+        <div class="" id="faq-accordion-col1">
+          <!-- Accordion Item 1 (Open by default) -->
+          <div class="bg-white rounded-2xl mb-5 border border-metred">
+            <button onclick="openAccordion('section1')"
+              class="accordion-btn w-full text-left p-6 flex justify-between items-center bg-metredbg text-metred rounded-t-2xl">
+              <span class="text-xl">Why opt for the PGDM Programme at MET?</span>
+              <svg id="icon-section1" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" stroke-width="2"
+                viewBox="0 0 24 24">
+                <path d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div id="section1" class="accordion-content max-h-auto overflow-hidden transition-all duration-300 pl-6 pr-6 bg-metredbg rounded-b-2xl">
+              <div class="w-full border-t border-metred pt-6 pb-6">
+                <p class="">The MET PGDM programme offers a competitive edge with its trimester-based structure, robust syllabus, and opportunities to publish research papers. Its flexible course design includes industry-relevant modules like Business Analytics and E-Commerce, fostering practical skills and bridging the education-employment gap. With a focus on entrepreneurship, industry expertise, and innovation, MET prepares future-ready managers for successful careers.</p>
+              </div>    
+            </div>
+          </div>
+          <!-- Accordion Item 2 -->
+          <div class="bg-white rounded-2xl mb-5">
+            <button onclick="openAccordion('section2')"
+              class="accordion-btn w-full text-left p-6 flex justify-between items-center">
+              <span class="text-xl">What is the teaching instruction MET PGDM follows?</span>
+              <svg id="icon-section2" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" stroke-width="2"
+                viewBox="0 0 24 24">
+                <path d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div id="section2" class="accordion-content max-h-0 overflow-hidden transition-all duration-300 pl-6 pr-6">
+              <div class="w-full border-t border-metred pt-6 pb-6">
+                <p class="">The MET PGDM programme offers a competitive edge with its trimester-based structure, robust syllabus, and opportunities to publish research papers. Its flexible course design includes industry-relevant modules like Business Analytics and E-Commerce, fostering practical skills and bridging the education-employment gap. With a focus on entrepreneurship, industry expertise, and innovation, MET prepares future-ready managers for successful careers.</p>
+              </div>  
+            </div>
+          </div>
+          <!-- Accordion Item 3 -->
+          <div class="bg-white rounded-2xl mb-5">
+            <button onclick="openAccordion('section3')"
+              class="accordion-btn w-full text-left p-6 flex justify-between items-center">
+              <span class="text-xl">What is so unique about MET PGDM specializations?</span>
+              <svg id="icon-section3" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" stroke-width="2"
+                viewBox="0 0 24 24">
+                <path d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div id="section3" class="accordion-content max-h-0 overflow-hidden transition-all duration-300 pl-6 pr-6">
+              <div class="w-full border-t border-metred pt-6 pb-6">
+                <p class="">The MET PGDM programme offers a competitive edge with its trimester-based structure, robust syllabus, and opportunities to publish research papers. Its flexible course design includes industry-relevant modules like Business Analytics and E-Commerce, fostering practical skills and bridging the education-employment gap. With a focus on entrepreneurship, industry expertise, and innovation, MET prepares future-ready managers for successful careers.</p>
+              </div>  
+            </div>
+          </div>
+          <!-- Accordion Item 4-->
+          <div class="bg-white rounded-2xl mb-5">
+            <button onclick="openAccordion('section4')"
+              class="accordion-btn w-full text-left p-6 flex justify-between items-center">
+              <span class="text-xl">Why opt for the PGDM Programme at MET?</span>
+              <svg id="icon-section4" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" stroke-width="2"
+                viewBox="0 0 24 24">
+                <path d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div id="section4" class="accordion-content max-h-0 overflow-hidden transition-all duration-300 pl-6 pr-6 bg-metredbg rounded-b-2xl">
+              <div class="w-full border-t border-metred pt-6 pb-6">
+                <p class="">The MET PGDM programme offers a competitive edge with its trimester-based structure, robust syllabus, and opportunities to publish research papers. Its flexible course design includes industry-relevant modules like Business Analytics and E-Commerce, fostering practical skills and bridging the education-employment gap. With a focus on entrepreneurship, industry expertise, and innovation, MET prepares future-ready managers for successful careers.</p>
+              </div>    
+            </div>
+          </div>
+        </div>
+        <div class="" id="faq-accordion-col2">
+          <!-- Accordion Item 5 -->
+          <div class="bg-white rounded-2xl mb-5">
+            <button onclick="openAccordion('section5')"
+              class="accordion-btn w-full text-left p-6 flex justify-between items-center">
+              <span class="text-xl">What is the teaching instruction MET PGDM follows?</span>
+              <svg id="icon-section5" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" stroke-width="2"
+                viewBox="0 0 24 24">
+                <path d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div id="section5" class="accordion-content max-h-0 overflow-hidden transition-all duration-300 pl-6 pr-6">
+              <div class="w-full border-t border-metred pt-6 pb-6">
+                <p class="">The MET PGDM programme offers a competitive edge with its trimester-based structure, robust syllabus, and opportunities to publish research papers. Its flexible course design includes industry-relevant modules like Business Analytics and E-Commerce, fostering practical skills and bridging the education-employment gap. With a focus on entrepreneurship, industry expertise, and innovation, MET prepares future-ready managers for successful careers.</p>
+              </div>  
+            </div>
+          </div>
+          <!-- Accordion Item 6 -->
+          <div class="bg-white rounded-2xl mb-5">
+            <button onclick="openAccordion('section6')"
+              class="accordion-btn w-full text-left p-6 flex justify-between items-center">
+              <span class="text-xl">What is so unique about MET PGDM specializations?</span>
+              <svg id="icon-section6" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" stroke-width="2"
+                viewBox="0 0 24 24">
+                <path d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div id="section6" class="accordion-content max-h-0 overflow-hidden transition-all duration-300 pl-6 pr-6">
+              <div class="w-full border-t border-metred pt-6 pb-6">
+                <p class="">The MET PGDM programme offers a competitive edge with its trimester-based structure, robust syllabus, and opportunities to publish research papers. Its flexible course design includes industry-relevant modules like Business Analytics and E-Commerce, fostering practical skills and bridging the education-employment gap. With a focus on entrepreneurship, industry expertise, and innovation, MET prepares future-ready managers for successful careers.</p>
+              </div>  
+            </div>
+          </div>
+          <!-- Accordion Item 7 -->
+          <div class="bg-white rounded-2xl mb-5">
+            <button onclick="openAccordion('section7')"
+              class="accordion-btn w-full text-left p-6 flex justify-between items-center">
+              <span class="text-xl">What is so unique about MET PGDM specializations?</span>
+              <svg id="icon-section7" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" stroke-width="2"
+                viewBox="0 0 24 24">
+                <path d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div id="section7" class="accordion-content max-h-0 overflow-hidden transition-all duration-300 pl-6 pr-6">
+              <div class="w-full border-t border-metred pt-6 pb-6">
+                <p class="">The MET PGDM programme offers a competitive edge with its trimester-based structure, robust syllabus, and opportunities to publish research papers. Its flexible course design includes industry-relevant modules like Business Analytics and E-Commerce, fostering practical skills and bridging the education-employment gap. With a focus on entrepreneurship, industry expertise, and innovation, MET prepares future-ready managers for successful careers.</p>
+              </div>  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="news bg-[linear-gradient(90deg,_#8F1E22_0%,_#E31E24_77%)] p-1">
+    <div class="overflow-hidden">
+      <div class="animate-marquee text-white text-lg font-extrabold">
+        <span class="marquee-item">*Post Graduate Diploma in Management, AICTE & DTE Approved* (PGDM College Mumbai)</span>
+        <span class="marquee-item">*Post Graduate Diploma in Management, AICTE & DTE Approved* (PGDM College Mumbai)</span>
+        <span class="marquee-item">*Post Graduate Diploma in Management, AICTE & DTE Approved* (PGDM College Mumbai)</span>
+        <span class="marquee-item">*Post Graduate Diploma in Management, AICTE & DTE Approved* (PGDM College Mumbai)</span>
+        <span class="marquee-item">*Post Graduate Diploma in Management, AICTE & DTE Approved* (PGDM College Mumbai)</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact pt-10 pb-10">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-full mx-auto text-center mb-5">
+        <h2 class="text-4xl font-archivobold">Contact <span class="text-metred">Us</span></h2>
+      </div>
+      <div class="max-w-full mx-auto grid grid-cols-1 lg:grid-cols-5 gap-10 mb-5 bg-greybg rounded-2xl">
+        <div class="lg:col-span-2 p-8 flex items-center">
+          <div>
+            <img src="../root/images/contact-icon.png" alt="Contact Us">
+            <h3 class="text-3xl pb-3 font-archivobold mt-5">Visit <span class="text-metred">Our Campus</span></h3>
+            <div class="flex gap-5 items-start">
+              <img src="../root/images/contact-map.png" alt="Address">
+              <div>
+                <p>MET Institute of Post Graduate Diploma in Management Bhujbal Knowledge City, Bandra Reclamation, Bandra (West), Mumbai - 400 050, Maharashtra, India</p>
+              </div>
+            </div>
+            <div class="flex gap-5 items-start mt-5">
+              <img src="../root/images/contact-call.png" alt="Address">
+              <div>
+                <p>7208006694,7208006695, <br>8451907258,9967181380 <br>Mon to Sat (10 am to 6 pm)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lg:col-span-3">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.2701586001667!2d72.8266165757653!3d19.05185598214778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9d95195a12f%3A0x7b2c91d24e169a83!2sMET%20Institute%20of%20Management!5e0!3m2!1sen!2sin!4v1752495536336!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-r-2xl"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer bg-metheader text-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-full mx-auto grid grid-cols-1 lg:grid-cols-2 pt-2 pb-2">
+        <div>
+          <p>Copyright © 2026 MET. All rights reserved</p>
+        </div>
+        <div class="text-end">
+          <p><a>Privacy Policy</a> | <a>Terms & Conditions</a></p>
+        </div>
+        
+      </div>
+    </div>
+  </footer>
+
+  <div id="videoModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70">
+    <div class="relative w-full max-w-4xl mx-4 bg-black rounded-xl overflow-hidden">
+      <button id="closeVideo" class="absolute top-3 right-3 z-10 text-white text-2xl">✕</button>
+      <div class="relative w-full aspect-video">
+        <iframe id="youtubeFrame" class="absolute inset-0 w-full h-full" src="" title="YouTube video" frameborder="0"
+          allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Video Popup -->
+  <script>
+    const modal = document.getElementById('videoModal');
+    const iframe = document.getElementById('youtubeFrame');
+    const closeBtn = document.getElementById('closeVideo');
+  
+    document.querySelectorAll('.video-trigger').forEach(el => {
+      el.addEventListener('click', () => {
+        const videoId = el.dataset.videoId;
+  
+        iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+  
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      });
+    });
+  
+    function closeModal() {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      iframe.src = ''; // stops the video
+    }
+  
+    closeBtn.addEventListener('click', closeModal);
+  
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+  
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+  </script>
+  
+  <!-- Mobile Menu Toggle -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const hamburgerIcon = mobileMenuToggle.querySelector('i');
+
+      mobileMenuToggle.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+        
+        // Toggle between hamburger and close icon
+        if (mobileMenu.classList.contains('hidden')) {
+          hamburgerIcon.classList.remove('fa-times');
+          hamburgerIcon.classList.add('fa-bars');
+        } else {
+          hamburgerIcon.classList.remove('fa-bars');
+          hamburgerIcon.classList.add('fa-times');
+        }
+      });
+
+      // Close mobile menu when clicking on a link
+      const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+      mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          mobileMenu.classList.add('hidden');
+          hamburgerIcon.classList.remove('fa-times');
+          hamburgerIcon.classList.add('fa-bars');
+        });
+      });
+    });
+  </script>
+  <!-- FAQ Accordian -->
+  <script>
+    function openAccordion(activeId) {
+      const allContents = document.querySelectorAll('.accordion-content');
+      const allIcons = document.querySelectorAll('.accordion-btn svg');
+      const allButtons = document.querySelectorAll('.accordion-btn');
+
+      allContents.forEach(content => {
+        const parentItem = content.parentElement;
+        if (content.id === activeId) {
+          content.classList.remove('max-h-0', 'bg-white');
+          content.classList.add('max-h-auto', 'bg-metredbg', 'rounded-b-2xl');
+          // add border when expanded
+          if (parentItem) parentItem.classList.add('border', 'border-metred');
+        } else {
+          content.classList.remove('max-h-auto', 'bg-metredbg', 'rounded-b-2xl');
+          content.classList.add('max-h-0', 'bg-white');
+          // remove border when collapsed
+          if (parentItem) parentItem.classList.remove('border', 'border-metred');
+        }
+      });
+
+      allIcons.forEach(icon => {
+        if (icon.id === 'icon-' + activeId) {
+          icon.classList.add('rotate-180');
+        } else {
+          icon.classList.remove('rotate-180');
+        }
+      });
+
+      allButtons.forEach(btn => {
+        const svg = btn.querySelector('svg');
+        const iconId = svg?.id || ''; 
+        if (iconId === 'icon-' + activeId) {
+          btn.classList.add('bg-metredbg', 'text-metred', 'rounded-t-2xl');
+          btn.classList.remove('bg-white', 'text-black', 'rounded-2xl');
+          // btn.insertAdjacentHTML('beforeend', '<div class="w-[95%] border-b border-metred mt-3"></div>');
+        } else {
+          btn.classList.add('bg-white', 'text-black', 'rounded-2xl');
+          btn.classList.remove('bg-metredbg', 'text-metred', 'rounded-t-2xl');
+        }
+      });
+    }
+  </script>
+  <!-- Programme Accordian -->
+  <script>
+    const accordionButtons = document.querySelectorAll('[data-accordion-btn]');
+    const programmeaccordionButtons = document.querySelectorAll('[data-programme-accordion-btn]');
+    programmeaccordionButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const content = button.nextElementSibling;
+        const icon = button.querySelector('.accordion-icon');
+        const text = button.querySelector('span');
+        const isOpen = content.style.maxHeight;
+      });
+    });
+    accordionButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const content = button.nextElementSibling;
+        const icon = button.querySelector('.accordion-icon');
+        const text = button.querySelector('span');
+        const isOpen = content.style.maxHeight;
+
+        // Close all accordions in same group
+        button.closest('div').parentElement
+          .querySelectorAll('.accordion-content')
+          .forEach(el => {
+            el.style.maxHeight = null;
+
+          const btn = el.previousElementSibling;
+          btn.querySelector('.accordion-icon')?.classList.remove('rotate-180');
+          btn.querySelector('span')?.classList.remove('font-bold');
+        });
+
+        if (!isOpen) {
+          content.style.maxHeight = content.scrollHeight + 'px';
+          icon.classList.add('rotate-180');
+          text.classList.add('font-bold');
+        }
+      });
+    });
+
+    /* ✅ OPEN FIRST ACCORDION ON LOAD */
+    document.querySelectorAll('.accordion-group').forEach(section => {
+      const firstBtn = section.querySelector('[data-accordion-btn]');
+      if (!firstBtn) return;
+
+      const content = firstBtn.nextElementSibling;
+
+      content.style.maxHeight = content.scrollHeight + 'px';
+      firstBtn.querySelector('.accordion-icon')?.classList.add('rotate-180');
+      firstBtn.querySelector('span')?.classList.add('font-bold');
+    });
+  </script>
+  <!-- Owl Carousel -->
+  <script>
+  $(document).ready(function(){
+
+    $('.testimonial-slider').owlCarousel({
+      items: 3,
+      margin: 30,
+      loop: true,
+      autoplay: false,
+      autoplayTimeout: 4000,
+      nav: true,
+      dots: true,
+      responsive:{
+        0:{ items:1 },
+        768:{ items:2 },
+        1024:{ items:3 }
+      },
+      onInitialized: function() {
+        // Make all items equal height
+        var maxHeight = 0;
+        $('.testimonial-slider .item').each(function() {
+          var height = $(this).outerHeight();
+          if (height > maxHeight) {
+            maxHeight = height;
+          }
+        });
+        $('.testimonial-slider .item').css('min-height', maxHeight + 'px');
+      }
+    });
+
+    $('.placement-slider').owlCarousel({
+      items: 8,
+      margin: 30,
+      loop: true,
+      autoplay: true,
+      autoplayTimeout: 500,
+      nav: false,
+      dots: false,
+      responsive:{
+        0:{ items:2 },
+        768:{ items:3 },
+        1024:{ items:8 }
+      },
+      onInitialized: function() {
+        // Make all items equal height
+        var maxHeight = 0;
+        $('.testimonial-slider .item').each(function() {
+          var height = $(this).outerHeight();
+          if (height > maxHeight) {
+            maxHeight = height;
+          }
+        });
+        $('.testimonial-slider .item').css('min-height', maxHeight + 'px');
+      }
+    });
+
+    $('.placement2-slider').owlCarousel({
+      items: 8,
+      margin: 30,
+      loop: true,
+      autoplay: true,
+      autoplayTimeout: 500,
+      nav: false,
+      dots: false,
+      rtl: true,
+      responsive:{
+        0:{ items:3 },
+        768:{ items:5 },
+        1024:{ items:8 }
+      },
+      onInitialized: function() {
+        // Make all items equal height
+        var maxHeight = 0;
+        $('.testimonial-slider .item').each(function() {
+          var height = $(this).outerHeight();
+          if (height > maxHeight) {
+            maxHeight = height;
+          }
+        });
+        $('.testimonial-slider .item').css('min-height', maxHeight + 'px');
+      }
+    });
+
+    
+    // Style navigation arrows with Tailwind classes
+    $('.owl-carousel').addClass('relative');
+    $('.owl-carousel .owl-nav').addClass('flex justify-between absolute top-1/2 left-0 right-0 -translate-y-1/2 pointer-events-none z-10 m-0');
+    $('.owl-carousel .owl-nav button').addClass('w-5 h-5 md:w-10 md:h-10 rounded-full bg-metred text-white border-0 flex items-center justify-center text-xl cursor-pointer transition-all duration-300 pointer-events-auto shadow-lg m-0 p-0 absolute');
+    $('.owl-carousel .owl-nav button.owl-prev').addClass('-left-2 lg:-left-6');
+    $('.owl-carousel .owl-nav button.owl-next').addClass('-right-2 lg:-right-6');  
+    $('.owl-carousel .owl-nav button span').addClass('text-md md:text-2xl leading-none font-bold block text-white');
+    // Change arrow symbols to shorter arrows
+    $('.owl-carousel .owl-nav button.owl-prev span').html('‹');
+    $('.owl-carousel .owl-nav button.owl-next span').html('›');
+    // Hover effect - keep metred background, just scale
+    $('.owl-carousel .owl-nav button').hover(
+      function() { $(this).addClass('scale-110'); },
+      function() { $(this).removeClass('scale-110'); }
+    );
+
+    
+
+  });
+  </script>
+
+</body>
+
+</html>
