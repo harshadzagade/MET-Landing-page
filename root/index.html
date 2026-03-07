@@ -147,6 +147,58 @@
 
   <header class="header bg-metheader fixed text-white top-0 left-0 w-full z-50 shadow">
     <div class="container mx-auto">
+      <div class="max-w-full mx-auto flex items-center justify-between pt-1 pb-1 md:pt-3 md:pb-3 pl-5 pr-5">
+        <div class="flex">
+          <img src="../landingpage/images/met_logo.png" alt="MET Logo" class="w-sm w-[50%] md:w-[80%]">
+        </div>
+        <nav class="hidden xl:flex space-x-8 text-base">
+          <a href="#about">About PGDM</a>
+          <a href="#specialisation">Specialisations</a>
+          <a href="#advantage">Advantage MET</a>
+          <a href="#programme">Programme Details</a>
+          <a href="#placement">Placement</a>
+          <a href="#apply">How To Apply</a>
+          <a href="#testimonial">Testimonials</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+        <div class="flex items-center gap-4">
+          <a href="tel:+917208006694"
+            class="hidden xl:inline-flex items-center bg-metred text-white px-4 py-2 rounded-full text-sm">
+            +91 7208006694
+          </a>
+          <a href="#"
+            class="hidden xl:inline-flex items-center bg-metred text-white px-4 py-2 rounded-full text-sm">
+            Apply Now
+          </a>
+          <!-- Hamburger Menu Button (Mobile Only) -->
+          <button id="mobile-menu-toggle" class="xl:hidden text-white focus:outline-none p-2">
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+        </div>
+      </div>
+      <!-- Mobile Menu -->
+      <nav id="mobile-menu" class="hidden xl:hidden bg-metheader border-t border-white/20">
+        <div class="flex flex-col space-y-4 py-4 px-4">
+          <a href="#about" class="text-white hover:text-metred transition-colors py-2">About PGDM</a>
+          <a href="#specialisation" class="text-white hover:text-metred transition-colors py-2">Specialisations</a>
+          <a href="#advantage" class="text-white hover:text-metred transition-colors py-2">Advantage MET</a>
+          <a href="#programme" class="text-white hover:text-metred transition-colors py-2">Programme Details</a>
+          <a href="#placement" class="text-white hover:text-metred transition-colors py-2">Placement</a>
+          <a href="#apply" class="text-white hover:text-metred transition-colors py-2">How To Apply</a>
+          <a href="#testimonial" class="text-white hover:text-metred transition-colors py-2">Testimonials</a>
+          <a href="#faq" class="text-white hover:text-metred transition-colors py-2">FAQ</a>
+          <a href="tel:+917208006694"
+            class="inline-flex items-center justify-center bg-metred text-white px-4 py-2 rounded-full text-sm mt-2">
+            <i class="fas fa-phone mr-2"></i>
+            +91 7208006694
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- <header class="header bg-metheader fixed text-white top-0 left-0 w-full z-50 shadow">
+    <div class="container mx-auto">
       <div class="max-w-full mx-auto flex items-center justify-center md:justify-between pt-1 pb-1 md:pt-3 md:pb-3 pl-5 pr-5">
         <div class="flex justify-center">
           <img src="../landingpage/images/met_logo.png" alt="MET Logo" class="w-sm w-[70%] md:w-[80%]">
@@ -162,7 +214,7 @@
         </div>
       </div>
     </div>
-  </header>
+  </header> -->
 
   <section class="banner pt-[57px] md:pt-[72px] relative">
     <div class="relative w-full z-10">
@@ -224,7 +276,7 @@
     </div>
   </section>
 
-  <section class="about pt-16 pb-16 bg-[linear-gradient(to_left,#e31c231a_0%,#ffffff1a_48%,#e31e241a_100%)]">
+  <section class="about pt-16 pb-16 bg-[linear-gradient(to_left,#e31c231a_0%,#ffffff1a_48%,#e31e241a_100%)]" id="about">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-10 gap-10">
         <div class="col-span-10 lg:col-span-8 lg:col-start-2">
@@ -319,7 +371,7 @@
     </div>
   </section>
 
-  <section class="placement pt-10 pb-10">
+  <section class="placement pt-10 pb-10" id="placement">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-full mx-auto grid grid-cols-1 md:grid-cols-10 gap-10">
         <div class="col-span-10">
@@ -738,7 +790,7 @@
     </div>
   </section>
 
-  <section class="apply-heading pt-20">
+  <section class="apply-heading pt-20" id="apply">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-full mx-auto text-center mb-5">
         <h2 class="text-4xl font-archivobold">How to  <span class="text-metred">Apply?</span></h2>
