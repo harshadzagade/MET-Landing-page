@@ -1,3 +1,21 @@
+<?php
+$utm_source = $_REQUEST['utm_source'] ?? '';
+$utm_medium = $_REQUEST['utm_medium'] ?? '';
+$utm_campaign = $_REQUEST['utm_campaign'] ?? '';
+$utm_adgroup = $_REQUEST['utm_adgroup'] ?? '';
+$utm_device = $_REQUEST['utm_device'] ?? '';
+$utm_content = $_REQUEST['utm_content'] ?? '';
+$utm_keyword = $_REQUEST['utm_keywords'] ?? '';
+$utm_adposition = $_REQUEST['utm_adposition'] ?? '';
+$utm_placement = $_REQUEST['utm_placement'] ?? '';
+$utm_matchtype = $_REQUEST['utm_matchtype'] ?? '';
+$utm_creative = $_REQUEST['utm_creative'] ?? '';
+$gclid = $_REQUEST['gclid'] ?? '';
+$fbclid = $_REQUEST['fbclid'] ?? '';
+$url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -227,10 +245,10 @@
     <div class="lg:absolute bottom-0 right-[5%] w-[90%] lg:w-[40%] lg:top-[17%] xl:top-1/2 xl:w-[30%] mx-auto transform xl:-translate-y-1/2 text-left border-2 lg:border-0 md-10 md:mt-0 rounded-2xl z-20">
       <div class="form bg-white p-5 rounded-2xl text-center">
         <h5 class="text-2xl font-archivobold">Register & Get <span class="text-metred">E-Brochure</span></h5>
-        <form action="#" method="POST" class="space-y-3 pt-4">
+        <form action="Backend.php" method="POST" novalidate class="needs-validation space-y-3 pt-4">
           <!-- Name -->
           <div>
-            <input type="text" id="name" name="name" placeholder="Your Full Name*" class="w-full p-3 bg-black/10 rounded-lg focus:outline-none focus:ring-2 transition" />
+            <input type="text" id="fname" name="fname" placeholder="Your Full Name*" class="w-full p-3 bg-black/10 rounded-lg focus:outline-none focus:ring-2 transition" />
           </div>
           <!-- Email -->
           <div>
@@ -256,8 +274,23 @@
             <input type="checkbox" id="privacy" name="privacy" value="true" checked="">
             <label for="privacy"> I agree to receive information</label>
           </div>
-          <div class="bg-metred text-xl text-white font-bold rounded-3xl pt-3 pb-3 pr-6 pl-6">
-            <button>Register Now</button>
+          <div >
+            <input type="hidden" name="page_name" value="PGDM">
+            <input type="hidden" name="utm_source" value="<?php echo $utm_source ?>">
+            <input type="hidden" name="utm_medium" value="<?php echo $utm_medium ?>">
+            <input type="hidden" name="utm_campaign" value="<?php echo $utm_campaign ?>">
+            <input type="hidden" name="utm_adgroup" value="<?php echo $utm_adgroup ?>">
+            <input type="hidden" name="utm_device" value="<?php echo $utm_device ?>">
+            <input type="hidden" name="utm_content" value="<?php echo $utm_content ?>">
+            <input type="hidden" name="utm_keywords" value="<?php echo $utm_keyword ?>">
+            <input type="hidden" name="utm_adposition" value="<?php echo $utm_adposition ?>">
+            <input type="hidden" name="utm_placement" value="<?php echo $utm_placement ?>">
+            <input type="hidden" name="utm_matchtype" value="<?php echo $utm_matchtype ?>">
+            <input type="hidden" name="utm_creative" value="<?php echo $utm_creative ?>">
+            <input type="hidden" name="gclid" value="<?php echo $gclid ?>">
+            <input type="hidden" name="fbclid" value="<?php echo $fbclid ?>">
+            <input type="hidden" name="url" value="<?php echo $url ?>">
+            <button type="submit" class="w-full bg-metred text-xl text-white font-bold rounded-3xl pt-3 pb-3 pr-6 pl-6">Register Now</button>
           </div>
         </form>
       </div>
