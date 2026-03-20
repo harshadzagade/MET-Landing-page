@@ -1,57 +1,352 @@
-<?php
-$utm_source = $_REQUEST['utm_source'] ?? '';
-$utm_medium = $_REQUEST['utm_medium'] ?? '';
-$utm_campaign = $_REQUEST['utm_campaign'] ?? '';
-$utm_adgroup = $_REQUEST['utm_adgroup'] ?? '';
-$utm_device = $_REQUEST['utm_device'] ?? '';
-$utm_content = $_REQUEST['utm_content'] ?? '';
-$utm_keyword = $_REQUEST['utm_keywords'] ?? '';
-$utm_adposition = $_REQUEST['utm_adposition'] ?? '';
-$utm_placement = $_REQUEST['utm_placement'] ?? '';
-$utm_matchtype = $_REQUEST['utm_matchtype'] ?? '';
-$utm_creative = $_REQUEST['utm_creative'] ?? '';
-$gclid = $_REQUEST['gclid'] ?? '';
-$fbclid = $_REQUEST['fbclid'] ?? '';
-$url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="assets/images/favicon.webp" type="image/png" sizes="16x16">
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>
         MET: Top PGDM College in Mumbai, PGDM in Marketing, PGDM in Finance
     </title>
+    <meta name="Description"
+        content="MET Institute of PGDM is one of the best PGDM colleges in Mumbai. PGDM at MET is approved by AICTE & DTE. It is more than an MBA since its industry-driven course content, pedagogy, New Age Add on specialisation">
+    <link rel="shortcut icon" type="image/png" href="https://www.met.edu/frontendassets/images/fev/metlogo.ico" />
 
-    <meta name="Description" content="MET Institute of PGDM is one of the best PGDM colleges in Mumbai. PGDM at MET is approved by AICTE &amp; DTE. It is more than an MBA since its industry-driven course content, pedagogy, New Age Add on specialisation">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+    }
+  </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+        crossorigin="anonymous" />
 
-    <link rel="shortcut icon" type="image/png" href="https://www.met.edu/frontendassets/images/fev/metlogo.ico">
+    <script src="./TW-ELEMENTS-PATH/dist/js/index.min.js"></script>
 
-    <!-- Google Tag Manager -->
+    <!-- Link Swiper's CSS -->
+    <link rel='stylesheet' href='https://unpkg.com/swiper@6.8.4/swiper-bundle.min.css'>
+
+    <script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y35WP4WP37"></script>
     <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-PWD7ZBXF');
-    </script>
-    <!-- End Google Tag Manager -->
+        window.dataLayer = window.dataLayer || [];
 
-    <!-- Microsoft Clarity -->
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-Y35WP4WP37');
+    </script>
+
+
+
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-9110127-6']);
+        _gaq.push(['_setDomainName', '.met.edu']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.c-tabs').basicTabs();
+        });
+
+        function isEmailValid(email) {
+            return /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w{2,}$/.test(email);
+        }
+
+        // now, test it: 
+
+        function ValidateData() {
+            var Alphabet; //Alphabet = "^[a-zA-Z]+$";			
+            Alphabet = /^[A-Za-z\s\b]+$/; //A-Z or a-z Alphabets only allowed				
+            var fname1 = document.getElementById('txtFName').value;
+            var city1 = document.getElementById('txtCity').value;
+            var y = document.forms[0].txtMobile.value;
+            if (document.forms[0].txtFName.value == "") {
+                alert("Name is not given.");
+                document.forms[0].txtFName.focus();
+                return false;
+            }
+            if (!fname1.match(Alphabet)) {
+                alert("Please enter the correct first name!");
+                document.forms[0].txtFName.value = "";
+                document.forms[0].txtFName.focus();
+                return false;
+            }
+
+
+            if (document.forms[0].txtLName.value == "") {
+                alert("Name is not given.");
+                document.forms[0].txtLName.focus();
+                return false;
+            }
+            if (!lname1.match(Alphabet)) {
+                alert("Please enter the correct last name!");
+                document.forms[0].txtLName.value = "";
+                document.forms[0].txtLName.focus();
+                return false;
+            }
+            if (document.forms[0].txtMobile.value == "" && document.forms[0].txtMobile.value == "") {
+                alert("Please enter mobile number.");
+                document.forms[0].txtMobile.focus();
+                return false;
+            }
+
+            if (isNaN(y) || y.indexOf(" ") != -1) {
+                alert("Enter numeric value")
+                document.forms[0].txtMobile.value = "";
+                return false;
+            }
+            if (y.length < 10 || y.length > 10) {
+                alert("Enter the 10 digit only");
+                document.forms[0].txtMobile.value = "";
+                return false;
+            }
+
+            if (document.forms[0].txtEmail.value == "") {
+                alert("!Please enter your emailid");
+                document.forms[0].txtEmail.focus();
+                return false;
+            }
+            if (document.forms[0].txtEmail.value != "" && !isEmailValid(document.forms[0].txtEmail.value)) {
+                alert("Incorrect email id!!");
+                document.forms[0].txtEmail.focus();
+                return false;
+            }
+
+            if (document.forms[0].work_experience.value == "") {
+                alert("!Please select work experience");
+                document.forms[0].work_experience.focus();
+                return false;
+            }
+
+            if (document.forms[0].ddQuali.value == "") {
+                alert("!Please select Qualification");
+                document.forms[0].ddQuali.focus();
+                return false;
+            }
+
+
+
+            return true;
+        }
+    </script>
+
+    <script>
+        function SendToExtraedge(clicked_name) { // not used
+
+
+            //alert('In send');
+            var finame = $("#txtFName").val();
+            var lname = $("#txtLName").val();
+            let fname = finame.concat(" ", lname);
+            var mobile = $("#txtMobile").val();
+            var email = $("#txtEmail").val();
+            var city = $("#txtCity").val();
+            var qualification = $("#ddQuali").val();
+            var work_experience = $("#work_experience").val();
+            var Leadsource = "testLeadsource";
+            var Leadtype = "testLeadtype";
+            var Leadname = "testLeadname";
+            //alert(Qualification);
+            var btnPressed = "";
+            var refUrl = window.location.href; //document.referrer;;
+            //alert(refUrl);
+            //validation code begins
+
+            var error = false;
+            var Alphabet; //Alphabet = "^[a-zA-Z]+$";			
+            Alphabet = /^[A-Za-z\s\b]+$/;
+
+            var mbNumber = /^[6-9]{1}[0-9]{9}/;
+
+            $('#fname_er').text("");
+
+            $('#lname_er').text("");
+            $('#mobile_er').text("");
+            $('#email_er').text("");
+            $('#city_er').text("");
+
+            if (finame == "") {
+                error = true;
+                $('#fname_er').text('Please enter valid first name.')
+            } else if (!finame.match(Alphabet)) {
+                error = true;
+                $('#fname_er').text('Please enter valid first name.')
+            }
+
+
+            if (lname == "") {
+                error = true;
+                $('#lname_er').text('Please enter valid last name.')
+            } else if (!lname.match(Alphabet)) {
+                error = true;
+                $('#lname_er').text('Please enter valid last name.')
+            }
+
+
+
+            if (mobile == "") {
+                error = true;
+                $('#mobile_er').text('Please enter valid mobile number starting with 6-9.')
+            } else if (!mobile.match(mbNumber)) {
+                error = true;
+                $('#mobile_er').text('Please enter valid mobile number starting with 6-9.')
+            } else if (mobile.length < 10 || mobile.length > 10) {
+                error = true;
+                $('#mobile_er').text('Please enter valid mobile number starting with 6-9.')
+            }
+
+            if (email == "") {
+                error = true;
+                $('#email_er').text('Please enter valid email id.')
+            } else if (!isEmailValid(email)) {
+                error = true;
+                $('#email_er').text('Please enter valid email id.')
+            }
+
+            if (work_experience == "") {
+                error = true;
+                $('#work_experience_er').text('Select work experience.')
+            }
+
+            if (city == "") {
+                error = true;
+                $('#city_er').text('Please enter valid city name.')
+            } else if (!city.match(Alphabet)) {
+                error = true;
+                $('#city_er').text('Please enter valid city name.')
+            }
+
+            if (qualification == "") {
+                error = true;
+                $('#Qualification_er').text('Select qualification.')
+            }
+            //validation code ends 
+
+            if (clicked_name == "Apply") {
+                btnPressed = "Apply";
+                //alert(btnPressed);
+
+            } else if (clicked_name == "Register") {
+                btnPressed = "Register";
+
+            }
+
+
+            //alert(fname);
+            //alert('Before call');
+            if (error === false) {
+                $.ajax({
+                    type: 'POST',
+                    url: "../classes/extraedgeNew.php",
+                    //contentType: 'application/json; charset=utf-8',
+                    dataType: 'json',
+                    data: {
+                        'fname': fname,
+                        'mobile': mobile,
+                        'email': email,
+                        'Educationalqualification': qualification,
+                        'btnPressed': btnPressed,
+                        'city': city,
+                        'currentUrl': refUrl,
+                        'course': 'MET Institute of Post Graduate Diploma in Management',
+                        'center': 'PGDM',
+                        'state': 'Maharashtra',
+                        best_time_to_call: '10',
+                        'Leadsource': Leadsource,
+                        'Leadtype': Leadtype,
+                        'Leadname': Leadname
+                    },
+                    beforeSend: function() {},
+                    success: function(res) {
+                        //alert("success");  
+                        //alert("In success1");
+                        if (res.error === 1) {
+                            //window.location =res.url;
+
+                            //window.location ='PGDM_Visit11_test.php';
+                            //alert("In error");
+                        } else {
+                            //alert(res.msg);
+                            window.location = 'PGDM_Visit.php';
+                        }
+                    },
+                    error: function(xhr, ajaxOptions, thrownError) {
+                        //alert(xhr.status);
+
+
+                        window.location = 'PGDM_Visit.php';
+                        // window.location ='AS_and_A_level_Visit10.php';
+
+                        //window.location ='PGDM_Visit11_test.php';
+                        //alert( ajaxOptions );
+                        //alert(thrownError);
+                    }
+                });
+
+            }
+
+
+        }
+    </script>
+
+    <!-- Meta Pixel Code -->
+    <script>
+        ! function(f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function() {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '450155366593151');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="" 1"" width="" 1"" style="" display:none"" src=""
+            https://www.facebook.com/tr?id=450155366593151&ev=PageView&noscript=1"" /></noscript>
+    <!-- End Meta Pixel Code -->
+
+    <!-- Microsoft Clarity Tracking Code -->
     <script type="text/javascript">
         (function(c, l, a, r, i, t, y) {
             c[a] = c[a] || function() {
@@ -62,359 +357,239 @@ $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http
             t.src = "https://www.clarity.ms/tag/" + i;
             y = l.getElementsByTagName(r)[0];
             y.parentNode.insertBefore(t, y);
-        })(window, document, "clarity", "script", "pv5l42udd7");
+        })(window, document, "clarity", "script", "chqhrstg9m");
     </script>
-    <!-- End Microsoft Clarity -->
+    <!-- End Microsoft Clarity Code -->
 
 
+    <!-- Global site tag (gtag.js) - Google Ads: 10944998245 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-10944998245"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-    <!-- bootstrap css cdn -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/general.css">
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
 
-    <link rel="stylesheet" href="css/aos.css" />
+        gtag('config', 'AW-10944998245');
+    </script>
 
-    <!-- Include Owl Carousel CSS -->
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <!--end google tag-->
 
-    <!-- FancyBox CSS -->
-    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+    <?php
+    session_start();
+    if (isset($_SERVER['HTTP_REFERER'])) {
+        $_SESSION['RefUrl'] = $_SERVER['HTTP_REFERER'];
+        //print_r($_SESSION['RefUrl']);
+        //exit();
+    }
+
+    ?>
 
 </head>
 
-<body>
 
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PWD7ZBXF"
-            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+<body id="top">
 
+    <!-- Section: 1 -->
+    <section class="mb-20 background-radial-gradient">
+        <style>
+            .background-radial-gradient {
+                background-color: hsl(218, 41%, 15%);
+                background-image: linear-gradient(to bottom right, rgba(7, 7, 7, 0.8), rgba(17, 17, 17, 0.8)),
+                    url('img/header-background.jpg');
+                /* background-image:url('img/3.jpg'); */
+            }
+        </style>
 
-    <div class="loader-container">
-        <div class="loader-wrapper">
-            <div class="loader">
+        <nav
+            class="navbar bg-white drop-shadow-lg navbar-expand-lg  py-2  relative flex items-center w-full justify-between">
+            <div class="px-6 w-full flex flex-wrap items-center justify-between ">
+                <div class="flex mx-auto">
+                    <a class="navbar-brand  w-[8rem] mb-[-3rem]" href="#!">
+                        <img src="https://www.met.edu/frontendassets/images/MET_College_in_Mumbai_logo.png" class=""
+                            alt="">
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container px-6 py-16 mx-auto text-center h-[35rem]">
+            <div class="max-w-lg mx-auto">
+                <h1 class="text-2xl md:text-3xl xl:text-5xl text-red-500 font-bold tracking-tight ">
+                    PGDM
+                </h1>
+                <p class="mt-6 mb-6 text-white text-[14.6px]">
+                    Marketing, Finance, HR, System and Operations. New Age Add on specialisation in
+                    FinTech, MarTech, Media &amp; Entertainment, Business Analytics,
+                    Start-ups &amp; New Enterprise Management.
+                </p>
+                <a class=" inline-block px-7 py-3 mt-2 bg-red-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-gray-500 hover:shadow-lg focus:bg-gray-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-400 active:shadow-lg transition duration-150 ease-in-out"
+                    data-mdb-ripple="true" data-mdb-ripple-color="light" role="button" href="#apply-now">
+                    Apply Now
+                </a> &nbsp;
+                <a class=" inline-block px-7 py-3 mt-[0.8rem] bg-transparent border border-white text-white font-medium text-sm leading-snug uppercase rounded focus:outline-none focus:ring-0 transition duration-150 ease-in-out "
+                    data-mdb-ripple="true" data-mdb-ripple-color="light" role="button" href="#apply-now">
+                    Download e-Brochure
+                </a>
+            </div>
+
+            <div class="flex justify-center mt-10 ">
+                <?php
+                include('content/PGDM_Banner.php');
+                ?>
+
+                <!-- <iframe  width="727" height="409" src="https://www.youtube.com/embed/ua-CiDNNj30" title="Learn Data Science Tutorial - Full Course for Beginners" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
             </div>
         </div>
+    </section>
+    <!-- Section: 1 -->
+
+
+    <!-- Section 2 -->
+    <section class="px-6 py-12 md:px-12 text-center lg:text-left">
+        <div class="container mt-[2rem] mx-auto xl:px-32 grid lg:grid-cols-2 gap-12 flex">
+            <div class="lg:mt-[2rem]">
+                <h1 class="text-3xl text-red-500 font-bold capitalize lg:text-3xl">
+                    About Programme
+                </h1>
+
+                <p class="max-w-xl mt-6 text-justify">
+                    MET is ranked as one of the top B-schools in India that offers PGDM or PGDM in
+                    Mumbai with specialisations in Marketing, Finance, HR, System and Operations. <br>
+                    PGDM at MET is approved by the All India Council for Technical Education (AICTE) &amp;
+                    DTE, Govt. Of Maharashtra. It is more than an MBA since its industry-driven course
+                    content and pedagogy empowers budding managers with technological tools and
+                    knowledge besides honing their managerial prowess. It is evident by the fact that a
+                    few thousand MET PGDM alumni are successfully employed at senior levels in
+                    leading corporate organisations, making their presence felt and many are successful
+                    entrepreneurs too.<br>
+                    Besides regular specializations in Finance, Marketing, Human Resources, System
+                    and Operations, MET PGDM offers New Age Add-on specialization in FinTech,
+                    MarTech, Media &amp; Entertainment, Business Analytics, Start-ups &amp;
+                    New Enterprise Management.
+                </p>
+            </div>
+            <div class=" lg:mt-[2rem]" id="apply-now">
+                <div class="w-full px-8 py-10 mx-auto overflow-hidden bg-red-600 shadow-2xl rounded-xl  lg:max-w-xl">
+                    <h1 class="text-2xl font-medium text-white text-center">Download
+                        Free e-Brochure</h1>
+
+                    <p class="mt-4 text-white text-center">
+                        Ask us everything and we would love
+                        to hear from you
+                    </p>
+
+                    <!-- <form class="mt-3" action="PGDM_Visit.php" method="post" name="form">
+                        <div class=" grid lg:grid-cols-2 lg:gap-5 md:gap-5  flex">
+                            <div class="flex-1 ">
+                                <input type="text" placeholder="First Name" id="txtFName" name="txtFName" pattern="[a-zA-Z]{1,}" required class="block w-full px-3 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" />
+                            </div>
+                            <div class="flex-1 ">
+                                <input type="text" placeholder="Last Name" id="txtLName" name="txtLName" pattern="[a-zA-Z]{1,}" required class="block w-full px-3 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" />
+                            </div>
+                        </div>
+                        <div class="grid lg:grid-cols-2 lg:gap-5 md:gap-5 flex mb-2">
+                            <div class="flex-1 ">
+                                <input type="email" placeholder="Email address" id="txtEmail" name="txtEmail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required class=" block w-full px-3 py-2 mt-2 sm:mt-[2rem]  text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" />
+                            </div>
+
+                            <div class="flex-1 ">
+                                <input type="text" placeholder="Mobile no." id="txtMobile" name="txtMobile" pattern="[6-9]{1}[0-9]{9}" required class="block w-full px-3 py-2 mt-2 lg:mt-[2rem] text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" />
+                            </div>
+                        </div>
+                        <div class="grid lg:grid-cols gap-5  flex">
+                            <div class="flex-1 ">
+                                <input type="text" placeholder="City" id="txtCity" name="txtCity" pattern="[a-zA-Z ]{1,}" required class="block w-full px-3 py-2 mt-0.5 lg:mt-[1.5rem] text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" />
+                            </div>
+                        </div>
+                        <div class="grid lg:grid-cols gap-5  flex">
+                            <div class="flex-1  ">
+                                <select type="text" name="ddQuali" id="ddQuali" required class="block w-full px-3 py-2 mt-2 lg:mt-[2rem] text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
+                                    <option hidden> Qualification </option>
+                                    <option>Graduate</option>
+                                    <option>Post-Graduate</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="grid lg:grid-cols gap-5  flex">
+                            <p class="text-gray-300 px-3 text-center text-sm mt-4">
+                                *MET can contact me through SMS, WhatsApp, Email and Call
+                            </p>
+                        </div>
+                        <button type="submit" id="btnSubmitLpPGDMApply" onclick="javascript:SendToExtraedge(this.name);" value="Apply" name="Apply" class="w-full px-6 py-3 mt-6 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-black rounded-md hover:bg-gray-500 focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50">
+                            Apply Now
+                        </button>
+                    </form> -->
+
+                    <div class="form-body">
+                        <div class="mt-3" id="ee-form-11">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Section 2 -->
+
+
+    <div class="relative">
+        <a href="#apply-now">
+            <button
+                class="fixed z-20 w-30 mt-[18rem] rotate-[-90deg] mr-[-2rem] uppercase  top-0 right-0 item-right px-6 py-3 mt-6 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-red-600 rounded-md hover:bg-gray-500 focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50">
+                <span class=""> Apply Now</span>
+            </button>
+        </a>
     </div>
 
-    <?php include 'assets/component/header.php' ?>
 
-    <main>
+    <?php
+    include('content/PGDM_content.php');
+    ?>
 
-        <!------------------- Banner section ----------------->
-        <section class="main-banner">
-            <div class="custom-container-2">
-                <div class="row g-4 justify-content-center align-items-center">
-                    <div class="col-xl-4 col-lg-3 col-md-6 col-sm-6 col-12 pt-5">
-                        <div class="banner-txt">
-                            <div class="visualtxt ">
-                                <div class="headline-pgdm">
-                                    <div class="head-line"></div>
-                                </div>
-                                <p>
-                                    <span class="linetext b-clr">PGDM</span><br>
-                                </p>
-                                <p>
-                                    Marketing, Finance, HR, System and Operations. <b>Add on specialisation in
-                                    FinTech | MarTech | Media & Entertainment | Business Analytics | Start-Ups & New Enterprise Management.</b>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
-                        <div class="text-center"> 
-                            <img src="assets/images/bannerstudent.webp" class="" alt="...">
-                        </div>
-                    </div>
 
-                    <div class="col-xl-4 col-lg-5 col-md-12 col-sm-12 col-12" style="z-index:1;">
-                        <div class="banform" id="banform">
-                            <div class="form-content">
-                                <p class="fw-bold form-highlighter">Download Free e-Brochure</p>
-                                <div class="form-body">
-                                    <!-- <p>Get In Touch </p> -->
-                                    <form id="pop-form" action="PGDM-Visit.php" method="POST" novalidate
-                                        class="needs-validation">
-                                        <div class="row g-3">
-                                            <div class="form-group col-md-12">
-                                                <div class="input-group">
-                                                    <label class="inputial">Name </label>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <!-- <script src="js/jquery-3.5.1.min.js"
+        integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script> -->
 
-                                                    <input id="enqform-fname" type="text" class="form-control rounded-pill"
-                                                        required name="fname" placeholder="Enter Your Name">
-
-                                                    <div class="invalid-feedback">
-                                                        Please enter a valid name.
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group col-md-12">
-                                                <div class="input-group">
-                                                    <label class="inputial">Email Address </label>
-
-                                                    <input type="email" class="form-control rounded-pill" required name="email"
-                                                        placeholder="Enter Your Email">
-                                                    <div class="invalid-feedback">
-                                                        Please enter a valid email.
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group col-md-12">
-                                                <div class="input-group">
-                                                    <label class="inputial">Mobile </label>
-
-                                                    <input type="text" class="form-control rounded-pill number-only"
-                                                        name="mobile" maxlength="10" required placeholder="Enter Your Number">
-                                                    <div class="invalid-feedback">
-                                                        Please enter a valid mbile no.
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group col-md-12">
-                                                <div class="input-group">
-                                                    <label class="inputial">City </label>
-
-                                                    <input type="text" class="form-control rounded-pill" name="city" required
-                                                        placeholder="Enter Your City">
-                                                    <div class="invalid-feedback">
-                                                        Please enter a valid city.
-                                                    </div>
-                                                </div>
-
-                                            </div>
-
-                                            <div class="form-group col-md-12">
-                                                <div class="input-group">
-                                                    <label class="inputial">Qualification </label>
-
-                                                    <select type="text" class="form-select rounded-pill" name="qualification"
-                                                        placeholder="Enter Your City" required>
-                                                        <option value="" selected hidden>Choose...</option>
-                                                        <option value="Graduation">Graduation</option>
-                                                        <option value="Post-Graduation">Post-Graduation</option>
-                                                    </select>
-                                                    <div class="invalid-feedback">
-                                                        Select enter a valid qualification.
-                                                    </div>
-                                                </div>
-
-                                            </div>
-
-                                            <div class=" col-md-12 m-0">
-                                                <div class="checkboxprivcy">
-                                                    <input type="checkbox" id="privacy" name="privacy" value="true" required
-                                                        checked="">
-
-                                                    <label for="privacy"> I agree to receive information</label>
-                                                </div>
-                                            </div>
-                                            <input type="hidden" name="page_name" value="PGDM">
-                                            <input type="hidden" name="utm_source" value="<?php echo $utm_source ?>">
-                                            <input type="hidden" name="utm_medium" value="<?php echo $utm_medium ?>">
-                                            <input type="hidden" name="utm_campaign" value="<?php echo $utm_campaign ?>">
-                                            <input type="hidden" name="utm_adgroup" value="<?php echo $utm_adgroup ?>">
-                                            <input type="hidden" name="utm_device" value="<?php echo $utm_device ?>">
-                                            <input type="hidden" name="utm_content" value="<?php echo $utm_content ?>">
-                                            <input type="hidden" name="utm_keywords" value="<?php echo $utm_keyword ?>">
-                                            <input type="hidden" name="utm_adposition" value="<?php echo $utm_adposition ?>">
-                                            <input type="hidden" name="utm_placement" value="<?php echo $utm_placement ?>">
-                                            <input type="hidden" name="utm_matchtype" value="<?php echo $utm_matchtype ?>">
-                                            <input type="hidden" name="utm_creative" value="<?php echo $utm_creative ?>">
-                                            <input type="hidden" name="gclid" value="<?php echo $gclid ?>">
-                                            <input type="hidden" name="fbclid" value="<?php echo $fbclid ?>">
-                                            <input type="hidden" name="url" value="<?php echo $url ?>">
-                                            <button type="submit" class="form-btn round-btn text-center d-inline btn-submit-1"
-                                                href="#"><span>Register Now <i class="flaticon-right-arrow"></i></span>
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-        <!------------------- Banner section ----------------->
-
-        <?php include 'assets/component/content.php' ?>
-
-    </main>
-
-    <!--=================footer section starts=============== -->
-    <footer class="footer-background">
-        <div class="conatiner">
-            <div class="row">
-                <div class="footer-text">
-                    <p class="footer-p">
-                        Copyright © 2025 MET. All rights reserved
-                    </p>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- =================footer section ends================ -->
-
-    <!-- bootstrap js cdn -->
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- jQuery -->
-    <script src="js/jquery-3.5.1.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/aos.js"></script>
-
-    <!-- FancyBox JS -->
-    <script src="js/jquery.fancybox.min.js"></script>
-
-    <script src="js/AOS.js"></script>
-    <script src="js/cookie.js"></script>
-    <script src="js/url-tracking.js"></script>
-    <script src="js/custom-validate.js"></script>
-    <script src="js/form-validation.js"></script>
+    <!-- Swiper JS -->
+    <script src='https://unpkg.com/swiper@6.8.4/swiper-bundle.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js'></script>
+    <script>
+        $('.question-and-answer').click(function() {
+            $(this).find(".answer").toggleClass("hidden")
+            $(this).find(".question-chevron").toggleClass("hidden")
+        })
+    </script>
 
     <script>
-        Delete_Cookie('formfilled');
-        $(document).ready(function() {
-            $(".offcanvas-nav .offcanvas-link").click(function() {
-                $('.offcanvas-start').offcanvas('hide');
+        document.addEventListener('alpine:init', () => {
+            Alpine.store('accordion', {
+                tab: 0
             });
-            $('.gallery-carousel').owlCarousel({
-                items: 1,
-                loop: false,
-                margin: 10,
-                // center: true,
-                autoplay: false,
-                smartSpeed: 2000,
-                //autoplayTimeout: 6000,
-                //autoplayHoverPause: true,
-                dots: true,
-                backFocus: false,
-                navText: [
-                    '<img class="arrow" src="assets/images/icons/left-arrow.svg" alt="arrow"></img>',
-                    '<img class="arrow" src="assets/images/icons/right-arrow.svg" alt="arrow"></img>'
-                ],
-                responsive: {
-                    567: {
-                        items: 1,
-                        nav: false,
-                        margin: 0,
-                    },
-                    768: {
-                        items: 1,
-                        nav: true,
-                        margin: 10,
-                    },
-                    992: {
-                        items: 1,
-                        nav: true,
-                        margin: 20,
-                    },
-                    1300: {
-                        items: 1,
-                        nav: true,
-                        margin: 20,
-                    }
+
+            Alpine.data('accordion', (idx) => ({
+                init() {
+                    this.idx = idx;
+                },
+                idx: -1,
+                handleClick() {
+                    this.$store.accordion.tab = this.$store.accordion.tab === this.idx ? 0 : this.idx;
+                },
+                handleRotate() {
+                    return this.$store.accordion.tab === this.idx ? 'rotate-180' : '';
+                },
+                handleToggle() {
+                    return this.$store.accordion.tab === this.idx ? `max-height: ${this.$refs.tab.scrollHeight}px` : '';
                 }
-            });
-            $('.takeaways-carousel').owlCarousel({
-                items: 1,
-                margin: 30,
-                smartSpeed: 2000,
-                nav: true,
-                autoplayTimeout: 6000,
-                autoplay: true,
-                loop: false,
-                dots: true,
-                autoplayHoverPause: true,
-                navText: [
-                    '<img class="arrow" src="assets/images/icons/left-arrow-2.svg" alt="arrow"></img>',
-                    '<img class="arrow rotate" src="assets/images/icons/left-arrow-2.svg" alt="arrow"></img>'
-                ],
-                responsive: {
-                    0: {
-                        items: 1,
-                    },
-                    992: {
-                        items: 2,
-                    },
-                    1350: {
-                        items: 3,
-                    },
-                    1700: {
-                        items: 4,
-                    }
-                }
-            });
-            $('.event-carousel').owlCarousel({
-                items: 1,
-                margin: 30,
-                smartSpeed: 2000,
-                nav: false,
-                autoplayTimeout: 6000,
-                autoplay: false,
-                loop: true,
-                dots: true,
-                autoplayHoverPause: true,
-                // navText: ['<img class="arrow" src="assets/images/icons/left-arrow-2.svg" alt="arrow"></img>',
-                //     '<img class="arrow rotate" src="assets/images/icons/left-arrow-2.svg" alt="arrow"></img>'
-                // ],
-                responsive: {
-                    0: {
-                        items: 1,
-                    },
-                    768: {
-                        items: 2,
-                    },
-                    992: {
-                        items: 4,
-                    },
-                    1300: {
-                        items: 4,
-                    }
-                }
-            });
-            $('.testimonial-carousel').owlCarousel({
-                items: 1,
-                margin: 30,
-                smartSpeed: 2000,
-                nav: false,
-                autoplayTimeout: 6000,
-                autoplay: false,
-                loop: true,
-                dots: true,
-                autoplayHoverPause: true,
-                navText: [
-                    '<img class="arrow" src="assets/images/icons/left-arrow-2.svg" alt="arrow"></img>',
-                    '<img class="arrow rotate" src="assets/images/icons/left-arrow-2.svg" alt="arrow"></img>'
-                ],
-                responsive: {
-                    0: {
-                        items: 1,
-                    },
-                    768: {
-                        items: 2,
-                    },
-                    992: {
-                        items: 3,
-                    },
-                    1300: {
-                        items: 3,
-                    }
-                }
-            });
-            // Initialize FancyBox
-            $("[data-fancybox]").fancybox({
-                // Options
-            });
+            }));
         })
+    </script>
+    <script
+        src="https://eeconfigstaticfiles.blob.core.windows.net/staticfiles/met/ee-form-widget/form-11/widget.js">
     </script>
 
 </body>
