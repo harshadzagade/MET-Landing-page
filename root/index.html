@@ -188,8 +188,8 @@
           <a href="#testimonial" class="text-white hover:text-metred transition-colors py-2">Testimonials</a>
           <a href="#faq" class="text-white hover:text-metred transition-colors py-2">FAQ</a>
           <a href="tel:+917208006694"
-            class="inline-flex items-center justify-center bg-metred text-white px-4 py-2 rounded-full text-sm mt-2">
-            <i class="fas fa-phone mr-2"></i>
+            class="inline-flex items-center justify-center bg-metred text-white px-4 py-2 rounded-full text-sm mt-2 w-fit">
+            <i class="fas fa-phone mr-2 "></i>
             +91 7208006694
           </a>
         </div>
@@ -216,7 +216,7 @@
     </div>
   </header> -->
 
-  <section class="banner pt-[57px] md:pt-[72px] relative">
+  <section class="banner pt-[57px] md:pt-[72px] relative" id="banner">
     <div class="relative w-full z-10">
       <!-- Banner Image -->
       <img src="../root/images/root-banner_dk.png" alt="Banner" class="w-full object-cover hidden md:block relative ">
@@ -281,10 +281,10 @@
       <div class="grid grid-cols-10 gap-10">
         <div class="col-span-10 lg:col-span-8 lg:col-start-2">
           <div class="max-w-full mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 flex items-center">
-            <div>
+            <div class="order-2 lg:order-1">
               <img src="../root/images/about-programme.png" alt="Programme Details" class="rounded-2xl"> 
             </div>
-            <div>
+            <div class="order-1 lg:order-2">
               <h2 class="text-4xl font-archivobold text-center md:text-start mb-5">About <span class="text-metred">Programme</span></h2>
               <p class="mb-3">MET is ranked as one of the top B-schools in India that offers PGDM or PGDM in Mumbai with specialisations in Marketing, Finance, HR, System and Operations.PGDM at MET is approved by the All India Council for Technical Education (AICTE) & DTE, Govt. Of Maharashtra.</p>
               <p class="mb-3">It is more than an MBA since its industry-driven course content and pedagogy empowers budding managers with technological tools and knowledge besides honing their managerial prowess. It is evident by the fact that a few thousand MET PGDM alumni are successfully employed at senior levels in leading corporate organisations, making their presence felt and many are successful entrepreneurs too.</p>
@@ -1269,16 +1269,27 @@
   <footer class="footer bg-metheader text-white">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-full mx-auto grid grid-cols-1 lg:grid-cols-2 pt-2 pb-2">
-        <div>
+        <div class="text-center lg:text-start">
           <p>Copyright © 2026 MET. All rights reserved</p>
         </div>
-        <div class="text-end">
+        <div class="text-center lg:text-end">
           <p><a>Privacy Policy</a> | <a>Terms & Conditions</a></p>
         </div>
         
       </div>
     </div>
   </footer>
+  
+  <!-- Sticky Enquire Now Button -->
+  <div class="fixed right-4 bottom-[50px] z-50">
+    <a href="/root#banner"
+      class="bg-metred text-white px-3 py-6 rounded-l-2xl flex flex-col items-center justify-center gap-4 shadow-lg hover:bg-metred transition-colors duration-300 cursor-pointer">
+      <!-- Vertical Text -->
+      <span class="[writing-mode:vertical-rl] rotate-180 tracking-widest text-base font-semibold leading-none">
+        Enquire Now
+      </span>
+    </a>
+  </div>
 
   <div id="videoModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70">
     <div class="relative w-full max-w-4xl mx-4 bg-black rounded-xl overflow-hidden">
@@ -1362,23 +1373,27 @@
       const allIcons = document.querySelectorAll('.accordion-btn svg');
       const allButtons = document.querySelectorAll('.accordion-btn');
 
+      // ✅ Check if the clicked section is already open
+      const clickedContent = document.getElementById(activeId);
+      const isAlreadyOpen = clickedContent.classList.contains('max-h-auto');
+
       allContents.forEach(content => {
         const parentItem = content.parentElement;
-        if (content.id === activeId) {
+        // ✅ If already open, close it; otherwise open only the active one
+        if (content.id === activeId && !isAlreadyOpen) {
           content.classList.remove('max-h-0', 'bg-white');
           content.classList.add('max-h-auto', 'bg-metredbg', 'rounded-b-2xl');
-          // add border when expanded
           if (parentItem) parentItem.classList.add('border', 'border-metred');
         } else {
           content.classList.remove('max-h-auto', 'bg-metredbg', 'rounded-b-2xl');
           content.classList.add('max-h-0', 'bg-white');
-          // remove border when collapsed
           if (parentItem) parentItem.classList.remove('border', 'border-metred');
         }
       });
 
       allIcons.forEach(icon => {
-        if (icon.id === 'icon-' + activeId) {
+        // ✅ If already open, remove rotation; otherwise rotate active one
+        if (icon.id === 'icon-' + activeId && !isAlreadyOpen) {
           icon.classList.add('rotate-180');
         } else {
           icon.classList.remove('rotate-180');
@@ -1387,67 +1402,17 @@
 
       allButtons.forEach(btn => {
         const svg = btn.querySelector('svg');
-        const iconId = svg?.id || ''; 
-        if (iconId === 'icon-' + activeId) {
+        const iconId = svg?.id || '';
+        // ✅ If already open, reset button style too
+        if (iconId === 'icon-' + activeId && !isAlreadyOpen) {
           btn.classList.add('bg-metredbg', 'text-metred', 'rounded-t-2xl');
           btn.classList.remove('bg-white', 'text-black', 'rounded-2xl');
-          // btn.insertAdjacentHTML('beforeend', '<div class="w-[95%] border-b border-metred mt-3"></div>');
         } else {
           btn.classList.add('bg-white', 'text-black', 'rounded-2xl');
           btn.classList.remove('bg-metredbg', 'text-metred', 'rounded-t-2xl');
         }
       });
     }
-  </script>
-  <!-- Programme Accordian -->
-  <script>
-    const accordionButtons = document.querySelectorAll('[data-accordion-btn]');
-    const programmeaccordionButtons = document.querySelectorAll('[data-programme-accordion-btn]');
-    programmeaccordionButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const content = button.nextElementSibling;
-        const icon = button.querySelector('.accordion-icon');
-        const text = button.querySelector('span');
-        const isOpen = content.style.maxHeight;
-      });
-    });
-    accordionButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const content = button.nextElementSibling;
-        const icon = button.querySelector('.accordion-icon');
-        const text = button.querySelector('span');
-        const isOpen = content.style.maxHeight;
-
-        // Close all accordions in same group
-        button.closest('div').parentElement
-          .querySelectorAll('.accordion-content')
-          .forEach(el => {
-            el.style.maxHeight = null;
-
-          const btn = el.previousElementSibling;
-          btn.querySelector('.accordion-icon')?.classList.remove('rotate-180');
-          btn.querySelector('span')?.classList.remove('font-bold');
-        });
-
-        if (!isOpen) {
-          content.style.maxHeight = content.scrollHeight + 'px';
-          icon.classList.add('rotate-180');
-          text.classList.add('font-bold');
-        }
-      });
-    });
-
-    /* ✅ OPEN FIRST ACCORDION ON LOAD */
-    document.querySelectorAll('.accordion-group').forEach(section => {
-      const firstBtn = section.querySelector('[data-accordion-btn]');
-      if (!firstBtn) return;
-
-      const content = firstBtn.nextElementSibling;
-
-      content.style.maxHeight = content.scrollHeight + 'px';
-      firstBtn.querySelector('.accordion-icon')?.classList.add('rotate-180');
-      firstBtn.querySelector('span')?.classList.add('font-bold');
-    });
   </script>
   <!-- Owl Carousel -->
   <script>
