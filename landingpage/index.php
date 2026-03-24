@@ -207,7 +207,7 @@ $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http
           <a href="#testimonial" class="text-white hover:text-metred transition-colors py-2">Testimonials</a>
           <a href="#faq" class="text-white hover:text-metred transition-colors py-2">FAQ</a>
           <a href="tel:+917208006694"
-            class="inline-flex items-center justify-center bg-metred text-white px-4 py-2 rounded-full text-sm mt-2">
+            class="inline-flex items-center justify-center bg-metred text-white px-4 py-2 rounded-full text-sm mt-2 w-fit">
             <i class="fas fa-phone mr-2"></i>
             +91 7208006694
           </a>
@@ -217,7 +217,7 @@ $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http
   </header>
   
 
-  <section class="banner pt-[57px] md:pt-[72px] relative">
+  <section class="banner pt-[57px] md:pt-[72px] relative" id="banner">
     <div class="relative w-full z-10">
       <!-- Banner Image -->
       <img src="../landingpage/images/banner.png" alt="Banner" class="w-full object-cover hidden md:block relative ">
@@ -1307,6 +1307,17 @@ $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http
     </div>
   </footer>
 
+  <!-- Sticky Enquire Now Button -->
+  <div class="fixed right-4 bottom-[50px] z-50">
+    <a href="/root#banner"
+      class="bg-metred text-white px-3 py-6 rounded-l-2xl flex flex-col items-center justify-center gap-4 shadow-lg hover:bg-metred transition-colors duration-300 cursor-pointer">
+      <!-- Vertical Text -->
+      <span class="[writing-mode:vertical-rl] rotate-180 tracking-widest text-base font-semibold leading-none">
+        Enquire Now
+      </span>
+    </a>
+  </div>
+
   <div id="videoModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70">
     <div class="relative w-full max-w-4xl mx-4 bg-black rounded-xl overflow-hidden">
       <button id="closeVideo" class="absolute top-3 right-3 z-10 text-white text-2xl">✕</button>
@@ -1389,18 +1400,27 @@ $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http
       const allIcons = document.querySelectorAll('.accordion-btn svg');
       const allButtons = document.querySelectorAll('.accordion-btn');
 
+      // ✅ Check if the clicked section is already open
+      const clickedContent = document.getElementById(activeId);
+      const isAlreadyOpen = clickedContent.classList.contains('max-h-auto');
+
       allContents.forEach(content => {
-        if (content.id === activeId) {
-          content.classList.remove('max-h-0', 'bg-greybg');
+        const parentItem = content.parentElement;
+        // ✅ If already open, close it; otherwise open only the active one
+        if (content.id === activeId && !isAlreadyOpen) {
+          content.classList.remove('max-h-0', 'bg-white');
           content.classList.add('max-h-auto', 'bg-metredbg', 'rounded-b-2xl');
+          if (parentItem) parentItem.classList.add('border', 'border-metred');
         } else {
           content.classList.remove('max-h-auto', 'bg-metredbg', 'rounded-b-2xl');
-          content.classList.add('max-h-0', 'bg-greybg');
+          content.classList.add('max-h-0', 'bg-white');
+          if (parentItem) parentItem.classList.remove('border', 'border-metred');
         }
       });
 
       allIcons.forEach(icon => {
-        if (icon.id === 'icon-' + activeId) {
+        // ✅ If already open, remove rotation; otherwise rotate active one
+        if (icon.id === 'icon-' + activeId && !isAlreadyOpen) {
           icon.classList.add('rotate-180');
         } else {
           icon.classList.remove('rotate-180');
@@ -1409,13 +1429,13 @@ $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http
 
       allButtons.forEach(btn => {
         const svg = btn.querySelector('svg');
-        const iconId = svg?.id || ''; 
-        if (iconId === 'icon-' + activeId) {
+        const iconId = svg?.id || '';
+        // ✅ If already open, reset button style too
+        if (iconId === 'icon-' + activeId && !isAlreadyOpen) {
           btn.classList.add('bg-metredbg', 'text-metred', 'rounded-t-2xl');
-          btn.classList.remove('bg-greybg', 'text-black', 'rounded-2xl');
-          // btn.insertAdjacentHTML('beforeend', '<div class="w-[95%] border-b border-metred mt-3"></div>');
+          btn.classList.remove('bg-white', 'text-black', 'rounded-2xl');
         } else {
-          btn.classList.add('bg-greybg', 'text-black', 'rounded-2xl');
+          btn.classList.add('bg-white', 'text-black', 'rounded-2xl');
           btn.classList.remove('bg-metredbg', 'text-metred', 'rounded-t-2xl');
         }
       });
